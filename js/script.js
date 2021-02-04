@@ -111,7 +111,7 @@ flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
 extras.agregarGasto(preguntasExtras, nombresExtras);
 
 
-if(document.getElementsByClassName("boton-gastosextras").onclick == true){
+function sub(){
     for(let i = 0; i < fijos.lista.length; i++){
         alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
     }
