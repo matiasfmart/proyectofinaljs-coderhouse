@@ -40,7 +40,6 @@ function ahorrar(ahorro, mes){
 }
 
 let ingresos = 0;
-let ahorro = new ahorrar();
 
 let fijos = new gastos();
 let flexibles = new gastos();
@@ -51,9 +50,7 @@ let extras = new gastos();
 
 function checkSub(){
     ingresos = document.getElementById("ingresos");
-    let inputAhorro = document.getElementById("ahorro");
-    let inputTiempo = document.getElementById("tiempo");
-    ahorro(inputAhorro, inputTiempo);
+    let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
     let nombresFijos = [
         "Luz",
         "Gas",
