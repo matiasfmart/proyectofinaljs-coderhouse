@@ -58,12 +58,12 @@ let nombresFijos = [
     "Estudios"
 ];
 let preguntasFijos = [
-    document.getElementById("luz"),
-    document.getElementById("gas"),
-    document.getElementById("agua"),
-    document.getElementById("alquiler"),
-    document.getElementById("transporte"),
-    document.getElementById("estudios")
+    document.getElementById("luz").value,
+    document.getElementById("gas").value,
+    document.getElementById("agua").value,
+    document.getElementById("alquiler").value,
+    document.getElementById("transporte").value,
+    document.getElementById("estudios").value
 ];
 let nombresFlexibles = [
     "Prepaga/Obrasocial",
@@ -74,12 +74,12 @@ let nombresFlexibles = [
     "Mascota"
 ];
 let preguntasFlexibles = [
-    document.getElementById("prepaga"),
-    document.getElementById("medicamentos"),
-    document.getElementById("supermercado"),
-    document.getElementById("internet"),
-    document.getElementById("telefono"),
-    document.getElementById("mascota")
+    document.getElementById("prepaga").value,
+    document.getElementById("medicamentos").value,
+    document.getElementById("supermercado").value,
+    document.getElementById("internet").value,
+    document.getElementById("telefono").value,
+    document.getElementById("mascota").value
 ];
 let nombresExtras = [
     "Tv/Telefono",
@@ -94,16 +94,16 @@ let nombresExtras = [
     "Otros"
 ];
 let preguntasExtras = [
-    document.getElementById("telefono"),
-    document.getElementById("indumentaria"),
+    document.getElementById("telefono").value,
+    document.getElementById("indumentaria").value,
     document.getElementById("gim"),
-    document.getElementById("peluqueria"),
-    document.getElementById("restaurantes"),
-    document.getElementById("cine"),
-    document.getElementById("regalos"),
-    document.getElementById("delivery"),
-    document.getElementById("caridad"),
-    document.getElementById("otros")
+    document.getElementById("peluqueria").value,
+    document.getElementById("restaurantes").value,
+    document.getElementById("cine").value,
+    document.getElementById("regalos").value,
+    document.getElementById("delivery").value,
+    document.getElementById("caridad").value,
+    document.getElementById("otros").value
 ];
 
 fijos.agregarGasto(preguntasFijos, nombresFijos);
