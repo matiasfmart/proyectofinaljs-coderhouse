@@ -48,7 +48,7 @@ let extras = new gastos();
 
 /*Ingreso de gastos a los vectores */
 
-function sub(){
+function checkSub(){
     ingresos = document.getElementById("ingresos");
     ahorro(document.getElementById("ahorro"),document.getElementById("tiempo") );
     let nombresFijos = [
