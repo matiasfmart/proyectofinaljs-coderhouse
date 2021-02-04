@@ -46,11 +46,14 @@ let fijos = new gastos();
 let flexibles = new gastos();
 let extras = new gastos();
 
+
 /*Ingreso de gastos a los vectores */
 
 function checkSub(){
     ingresos = document.getElementById("ingresos");
-    ahorro(document.getElementById("ahorro"),document.getElementById("tiempo") );
+    let inputAhorro = document.getElementById("ahorro");
+    let inputTiempo = document.getElementById("tiempo");
+    ahorro(inputAhorro, inputTiempo);
     let nombresFijos = [
         "Luz",
         "Gas",
