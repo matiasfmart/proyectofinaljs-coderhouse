@@ -2,7 +2,7 @@ body{
   background-color: rgb(118, 0, 228);
   color: aliceblue;
 }
-.gastosfijos, .gastosflexibles, .gastosextras{
+.gastosfijos, .gastosflexibles, .gastosextras, .ingresos{
   margin: 100px 0;
 }
 /*# sourceMappingURL=styles.css.map */

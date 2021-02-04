@@ -5,7 +5,7 @@ function gastos(){
 
     this.agregarGasto = function(gasto, nombre){
         for(let i = 0; i < gasto.length; i++){
-            this.lista.push(prompt(gasto[i]));
+            this.lista.push(gasto[i]);
             this.nombre.push(nombre[i]);
         }
     }
@@ -39,8 +39,8 @@ function ahorrar(ahorro, mes){
     }
 }
 
-let ingresos = prompt("Ingrese el total de sus ingresos");
-let ahorro = new ahorrar(prompt("Ingrese el monto que necesita ahorrar"),prompt("Ingrese en cuantos meses necesita el dinero") );
+let ingresos = document.getElementById("ingresos");
+let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo") );
 
 
 let fijos = new gastos();
@@ -58,12 +58,12 @@ let nombresFijos = [
     "Estudios"
 ];
 let preguntasFijos = [
-    "Aproximadamente cuanto abona de luz al mes?",
-    "Aproximadamente cuanto abona de gas al mes?",
-    "Aproximadamente cuanto abona de agua al mes?",
-    "Aproximadamente cuanto abona de alquiler al mes?",
-    "Aproximadamente cuanto gasta en transporte al mes?\nSi tiene auto coloque el gasto de combustible, y si se maneja en transporte publico coloque segun corresponda.",
-    "Aproximadamente cuanto gasta en estudios?"
+    document.getElementById("luz"),
+    document.getElementById("gas"),
+    document.getElementById("agua"),
+    document.getElementById("alquiler"),
+    document.getElementById("transporte"),
+    document.getElementById("estudios")
 ];
 let nombresFlexibles = [
     "Prepaga/Obrasocial",
@@ -74,12 +74,12 @@ let nombresFlexibles = [
     "Mascota"
 ];
 let preguntasFlexibles = [
-    "Aproximadamente cuanto gasta en medicina prepaga al mes?",
-    "Aproximadamente cuanto gasta en medicamentos al mes?",
-    "Aproximadamente cuanto gasta en el supermercado al mes?",
-    "Aproximadamente cuanto abona de internet al mes?",
-    "Aproximadamente cuanto gasta en su telefono tomando en cuenta si tiene cuotas, y su abono mensual?",
-    "Aproximadamente cuanto gasta en su mascota si es que tiene?"
+    document.getElementById("prepaga"),
+    document.getElementById("medicamentos"),
+    document.getElementById("supermercado"),
+    document.getElementById("internet"),
+    document.getElementById("telefono"),
+    document.getElementById("mascota")
 ];
 let nombresExtras = [
     "Tv/Telefono",
@@ -91,34 +91,35 @@ let nombresExtras = [
     "Regalos",
     "Delivery",
     "Caridad",
-    "Pasatiempos",
     "Otros"
 ];
 let preguntasExtras = [
-    "Aproximadamente cuanto abona en TV por cable y telefono al mes?",
-    "Aproximadamente cuanto gasta en comprar indumentaria al mes?",
-    "Aproximadamente cuanto gasta en el gimnasio/deportes al mes?",
-    "Aproximadamente cuanto gasta en la peluqueria al mes?",
-    "Aproximadamente cuanto gasta en comer fuera de su casa al mes?",
-    "Aproximadamente cuanto gasta en el cine/teatro al mes?",
-    "Aproximadamente cuanto gasta en regalos al mes?",
-    "Aproximadamente cuanto gasta en comidas por delivery al mes?",
-    "Aproximadamente cuanto gasta donaciones o caridad si es que realiza al mes?",
-    "Aproximadamente cuanto gasta en pasatiempos",
-    "Si tiene algun gasto mensual que no se este contemplando por favor ingrese la cantidad."
+    document.getElementById("telefono"),
+    document.getElementById("indumentaria"),
+    document.getElementById("gim"),
+    document.getElementById("peluqueria"),
+    document.getElementById("restaurantes"),
+    document.getElementById("cine"),
+    document.getElementById("regalos"),
+    document.getElementById("delivery"),
+    document.getElementById("caridad"),
+    document.getElementById("otros")
 ];
 
 fijos.agregarGasto(preguntasFijos, nombresFijos);
 flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
 extras.agregarGasto(preguntasExtras, nombresExtras);
 
-for(let i = 0; i < fijos.lista.length; i++){
-    alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-}
-for(let i = 0; i < flexibles.lista.length; i++){
-    alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-}
-for(let i = 0; i < extras.lista.length; i++){
-    alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+
+if(document.getElementsByClassName("boton-gastosextras").onclick == true){
+    for(let i = 0; i < fijos.lista.length; i++){
+        alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
+    }
+    for(let i = 0; i < flexibles.lista.length; i++){
+        alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
+    }
+    for(let i = 0; i < extras.lista.length; i++){
+        alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+    }
 }
 
