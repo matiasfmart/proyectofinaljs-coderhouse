@@ -16,10 +16,11 @@
             <a><li>Nosotros</li></a>
         </nav>
     </header>
-    <section class="container-fluid inicio">
+    <section class="container-fluid inicio" >
         <div class="row col-md-12 inicio__titulo">
             <h1>Calcula tus gastos, y cumpli tu objetivo de ahorro!</h1>
         </div>
+        <input type="submit" class="subComenzar" value="submit" onclick="subComenzar()" onkeypress="enterComenzar(event);">
     </section>
     <form class="container ingresos">
         <div class="row">
@@ -42,6 +43,7 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="tiempo" aria-describedby="basic-addon3" value="">
                 </div>
+                <input type="submit" class="subIngresos" value="submit" onclick="subIngresos()">
             </div>
         </div>
     </form>
@@ -81,6 +83,7 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="estudios" aria-describedby="basic-addon3" value="">
                 </div>
+                <input type="submit" name="sub" class="subFijos" value="submit" onclick="checkSub()">
             </div>
         </div>
     </form>
@@ -120,6 +123,7 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="mascota" aria-describedby="basic-addon3" value="">
                 </div>
+                <input type="submit" name="sub" class="subFlexibles" value="submit" onclick="checkSub()">
             </div>
         </div>
     </form>
@@ -181,7 +185,7 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="otros" aria-describedby="basic-addon3" value="">
                 </div>
-                <input type="submit" name="sub" class="sub" value="submit" onclick="checkSub()">
+                <input type="submit" name="sub" class="subExtras" value="submit" onclick="checkSub()">
             </div>
         </div>
     </form>

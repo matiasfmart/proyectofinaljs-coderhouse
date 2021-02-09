@@ -5,4 +5,15 @@ body{
 .gastosfijos, .gastosflexibles, .gastosextras, .ingresos{
   margin: 100px 0;
 }
-/*# sourceMappingURL=styles.css.map */
+.ingresos{
+  display: none;
+}
+.gastosfijos{
+  display: none;
+}
+.gastosflexibles{
+  display: none;
+}
+.gastosextras{
+  display: none;
+}
