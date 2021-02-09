@@ -47,85 +47,156 @@ let extras = new gastos();
 
 
 function enterComenzar(event){
-    if(event.which == 13 || event.keyCode){
-        alert("Hola");
+    if(event.which == 13 || event.keyCode == 13){
+        ingresos = document.getElementById("ingresos");
+        let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
+        let nombresFijos = [
+            "Luz",
+            "Gas",
+            "Agua",
+            "Alquiler",
+            "Transporte",
+            "Estudios"
+        ];
+        let preguntasFijos = [
+            document.getElementById("luz").value,
+            document.getElementById("gas").value,
+            document.getElementById("agua").value,
+            document.getElementById("alquiler").value,
+            document.getElementById("transporte").value,
+            document.getElementById("estudios").value
+        ];
+        let nombresFlexibles = [
+            "Prepaga/Obrasocial",
+            "Medicamentos",
+            "Supermercado",
+            "Internet",
+            "Telefono",
+            "Mascota"
+        ];
+        let preguntasFlexibles = [
+            document.getElementById("prepaga").value,
+            document.getElementById("medicamentos").value,
+            document.getElementById("supermercado").value,
+            document.getElementById("internet").value,
+            document.getElementById("telefono").value,
+            document.getElementById("mascota").value
+        ];
+        let nombresExtras = [
+            "Tv/Telefono",
+            "Indumentaria",
+            "Gim/Deportes",
+            "Peluqueria",
+            "Restaurants",
+            "Cine/Teatro",
+            "Regalos",
+            "Delivery",
+            "Caridad",
+            "Otros"
+        ];
+        let preguntasExtras = [
+            document.getElementById("telefono").value,
+            document.getElementById("indumentaria").value,
+            document.getElementById("gim"),
+            document.getElementById("peluqueria").value,
+            document.getElementById("restaurantes").value,
+            document.getElementById("cine").value,
+            document.getElementById("regalos").value,
+            document.getElementById("delivery").value,
+            document.getElementById("caridad").value,
+            document.getElementById("otros").value
+        ];
+        
+        fijos.agregarGasto(preguntasFijos, nombresFijos);
+        flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
+        extras.agregarGasto(preguntasExtras, nombresExtras);
+        
+        for(let i = 0; i < fijos.lista.length; i++){
+            alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
+        }
+        for(let i = 0; i < flexibles.lista.length; i++){
+            alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
+        }
+        for(let i = 0; i < extras.lista.length; i++){
+            alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+        }
     }
 }
 
 /*Ingreso de gastos a los vectores */
 
-// function checkSub(){
-//     ingresos = document.getElementById("ingresos");
-//     let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
-//     let nombresFijos = [
-//         "Luz",
-//         "Gas",
-//         "Agua",
-//         "Alquiler",
-//         "Transporte",
-//         "Estudios"
-//     ];
-//     let preguntasFijos = [
-//         document.getElementById("luz").value,
-//         document.getElementById("gas").value,
-//         document.getElementById("agua").value,
-//         document.getElementById("alquiler").value,
-//         document.getElementById("transporte").value,
-//         document.getElementById("estudios").value
-//     ];
-//     let nombresFlexibles = [
-//         "Prepaga/Obrasocial",
-//         "Medicamentos",
-//         "Supermercado",
-//         "Internet",
-//         "Telefono",
-//         "Mascota"
-//     ];
-//     let preguntasFlexibles = [
-//         document.getElementById("prepaga").value,
-//         document.getElementById("medicamentos").value,
-//         document.getElementById("supermercado").value,
-//         document.getElementById("internet").value,
-//         document.getElementById("telefono").value,
-//         document.getElementById("mascota").value
-//     ];
-//     let nombresExtras = [
-//         "Tv/Telefono",
-//         "Indumentaria",
-//         "Gim/Deportes",
-//         "Peluqueria",
-//         "Restaurants",
-//         "Cine/Teatro",
-//         "Regalos",
-//         "Delivery",
-//         "Caridad",
-//         "Otros"
-//     ];
-//     let preguntasExtras = [
-//         document.getElementById("telefono").value,
-//         document.getElementById("indumentaria").value,
-//         document.getElementById("gim"),
-//         document.getElementById("peluqueria").value,
-//         document.getElementById("restaurantes").value,
-//         document.getElementById("cine").value,
-//         document.getElementById("regalos").value,
-//         document.getElementById("delivery").value,
-//         document.getElementById("caridad").value,
-//         document.getElementById("otros").value
-//     ];
+function checkSub(){
+    ingresos = document.getElementById("ingresos");
+    let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
+    let nombresFijos = [
+        "Luz",
+        "Gas",
+        "Agua",
+        "Alquiler",
+        "Transporte",
+        "Estudios"
+    ];
+    let preguntasFijos = [
+        document.getElementById("luz").value,
+        document.getElementById("gas").value,
+        document.getElementById("agua").value,
+        document.getElementById("alquiler").value,
+        document.getElementById("transporte").value,
+        document.getElementById("estudios").value
+    ];
+    let nombresFlexibles = [
+        "Prepaga/Obrasocial",
+        "Medicamentos",
+        "Supermercado",
+        "Internet",
+        "Telefono",
+        "Mascota"
+    ];
+    let preguntasFlexibles = [
+        document.getElementById("prepaga").value,
+        document.getElementById("medicamentos").value,
+        document.getElementById("supermercado").value,
+        document.getElementById("internet").value,
+        document.getElementById("telefono").value,
+        document.getElementById("mascota").value
+    ];
+    let nombresExtras = [
+        "Tv/Telefono",
+        "Indumentaria",
+        "Gim/Deportes",
+        "Peluqueria",
+        "Restaurants",
+        "Cine/Teatro",
+        "Regalos",
+        "Delivery",
+        "Caridad",
+        "Otros"
+    ];
+    let preguntasExtras = [
+        document.getElementById("telefono").value,
+        document.getElementById("indumentaria").value,
+        document.getElementById("gim"),
+        document.getElementById("peluqueria").value,
+        document.getElementById("restaurantes").value,
+        document.getElementById("cine").value,
+        document.getElementById("regalos").value,
+        document.getElementById("delivery").value,
+        document.getElementById("caridad").value,
+        document.getElementById("otros").value
+    ];
     
-//     fijos.agregarGasto(preguntasFijos, nombresFijos);
-//     flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
-//     extras.agregarGasto(preguntasExtras, nombresExtras);
+    fijos.agregarGasto(preguntasFijos, nombresFijos);
+    flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
+    extras.agregarGasto(preguntasExtras, nombresExtras);
     
-//     for(let i = 0; i < fijos.lista.length; i++){
-//         alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-//     }
-//     for(let i = 0; i < flexibles.lista.length; i++){
-//         alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-//     }
-//     for(let i = 0; i < extras.lista.length; i++){
-//         alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
-//     }
-// }
+    for(let i = 0; i < fijos.lista.length; i++){
+        alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
+    }
+    for(let i = 0; i < flexibles.lista.length; i++){
+        alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
+    }
+    for(let i = 0; i < extras.lista.length; i++){
+        alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+    }
+}
  

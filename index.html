@@ -8,7 +8,7 @@
     <link href="./css/styles.css" rel="stylesheet" type="text/css">
     <title>Proyecto Final</title>
 </head>
-<body>
+<body onkeypress="enterComenzar(event);">
     <header>
         <nav class="navbar navbar-dark bg-primary">
             <a><li>Calcula!</li></a>
@@ -43,7 +43,6 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="tiempo" aria-describedby="basic-addon3" value="">
                 </div>
-                <input type="submit" class="subIngresos" value="submit" onclick="subIngresos()">
             </div>
         </div>
     </form>
@@ -83,7 +82,6 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="estudios" aria-describedby="basic-addon3" value="">
                 </div>
-                <input type="submit" name="sub" class="subFijos" value="submit" onclick="checkSub()">
             </div>
         </div>
     </form>
@@ -123,7 +121,6 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="mascota" aria-describedby="basic-addon3" value="">
                 </div>
-                <input type="submit" name="sub" class="subFlexibles" value="submit" onclick="checkSub()">
             </div>
         </div>
     </form>
