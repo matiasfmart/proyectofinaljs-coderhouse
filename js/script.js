@@ -106,6 +106,15 @@ function enterComenzar(event){
             document.getElementById("caridad").value,
             document.getElementById("otros").value
         ];
+
+        localStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+        localStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+
+        localStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+        localStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+
+        localStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+        localStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
         
         fijos.agregarGasto(preguntasFijos, nombresFijos);
         flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
