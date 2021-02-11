@@ -59,12 +59,12 @@ function enterComenzar(event){
             "Estudios"
         ];
         let preguntasFijos = [
-            document.getElementById("luz").value,
-            document.getElementById("gas").value,
-            document.getElementById("agua").value,
-            document.getElementById("alquiler").value,
-            document.getElementById("transporte").value,
-            document.getElementById("estudios").value
+            parseInt(document.getElementById("luz").value),
+            parseInt(document.getElementById("gas").value),
+            parseInt(document.getElementById("agua").value),
+            parseInt(document.getElementById("alquiler").value),
+            parseInt(document.getElementById("transporte").value),
+            parseInt(document.getElementById("estudios").value)
         ];
         let nombresFlexibles = [
             "Prepaga/Obrasocial",
@@ -75,12 +75,12 @@ function enterComenzar(event){
             "Mascota"
         ];
         let preguntasFlexibles = [
-            document.getElementById("prepaga").value,
-            document.getElementById("medicamentos").value,
-            document.getElementById("supermercado").value,
-            document.getElementById("internet").value,
-            document.getElementById("telefono").value,
-            document.getElementById("mascota").value
+            parseInt(document.getElementById("prepaga").value),
+            parseInt(document.getElementById("medicamentos").value),
+            parseInt(document.getElementById("supermercado").value),
+            parseInt(document.getElementById("internet").value),
+            parseInt(document.getElementById("telefono").value),
+            parseInt(document.getElementById("mascota").value)
         ];
         let nombresExtras = [
             "Tv/Telefono",
@@ -95,40 +95,59 @@ function enterComenzar(event){
             "Otros"
         ];
         let preguntasExtras = [
-            document.getElementById("telefono").value,
-            document.getElementById("indumentaria").value,
-            document.getElementById("gim"),
-            document.getElementById("peluqueria").value,
-            document.getElementById("restaurantes").value,
-            document.getElementById("cine").value,
-            document.getElementById("regalos").value,
-            document.getElementById("delivery").value,
-            document.getElementById("caridad").value,
-            document.getElementById("otros").value
+            parseInt(document.getElementById("telefono").value),
+            parseInt(document.getElementById("indumentaria").value),
+            parseInt(document.getElementById("gim").value),
+            parseInt(document.getElementById("peluqueria").value),
+            parseInt(document.getElementById("restaurantes").value),
+            parseInt(document.getElementById("cine").value),
+            parseInt(document.getElementById("regalos").value),
+            parseInt(document.getElementById("delivery").value),
+            parseInt(document.getElementById("caridad").value),
+            parseInt(document.getElementById("otros").value)
         ];
 
-        localStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
-        localStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+        sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+        sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
 
-        localStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
-        localStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+        sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+        sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
 
-        localStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
-        localStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
+        sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+        sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
         
-        fijos.agregarGasto(preguntasFijos, nombresFijos);
-        flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
-        extras.agregarGasto(preguntasExtras, nombresExtras);
+        let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
+        let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
+
+        let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
+        let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
+
+        let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
+        let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
+
+
         
-        for(let i = 0; i < fijos.lista.length; i++){
-            alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-        }
-        for(let i = 0; i < flexibles.lista.length; i++){
-            alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-        }
-        for(let i = 0; i < extras.lista.length; i++){
-            alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
-        }
+        fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
+        flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
+        extras.agregarGasto(parseGastosExtras, parseNombresExtras);
+        
+        console.log(parseNombresFijos);
+        console.log(parseGastosFijos);
+
+        console.log(parseNombresFlexibles);
+        console.log(parseGastosFlexibles);
+        
+        console.log(parseNombresExtras);
+        console.log(parseGastosExtras);
+        // for(let i = 0; i < fijos.lista.length; i++){
+        //     alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
+        // }
+        // for(let i = 0; i < flexibles.lista.length; i++){
+        //     alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
+        // }
+        // for(let i = 0; i < extras.lista.length; i++){
+        //     alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+        // }
     }
 }
 
@@ -146,12 +165,12 @@ function checkSub(){
         "Estudios"
     ];
     let preguntasFijos = [
-        document.getElementById("luz").value,
-        document.getElementById("gas").value,
-        document.getElementById("agua").value,
-        document.getElementById("alquiler").value,
-        document.getElementById("transporte").value,
-        document.getElementById("estudios").value
+        parseInt(document.getElementById("luz").value),
+        parseInt(document.getElementById("gas").value),
+        parseInt(document.getElementById("agua").value),
+        parseInt(document.getElementById("alquiler").value),
+        parseInt(document.getElementById("transporte").value),
+        parseInt(document.getElementById("estudios").value)
     ];
     let nombresFlexibles = [
         "Prepaga/Obrasocial",
@@ -162,12 +181,12 @@ function checkSub(){
         "Mascota"
     ];
     let preguntasFlexibles = [
-        document.getElementById("prepaga").value,
-        document.getElementById("medicamentos").value,
-        document.getElementById("supermercado").value,
-        document.getElementById("internet").value,
-        document.getElementById("telefono").value,
-        document.getElementById("mascota").value
+        parseInt(document.getElementById("prepaga").value),
+        parseInt(document.getElementById("medicamentos").value),
+        parseInt(document.getElementById("supermercado").value),
+        parseInt(document.getElementById("internet").value),
+        parseInt(document.getElementById("telefono").value),
+        parseInt(document.getElementById("mascota").value)
     ];
     let nombresExtras = [
         "Tv/Telefono",
@@ -182,30 +201,58 @@ function checkSub(){
         "Otros"
     ];
     let preguntasExtras = [
-        document.getElementById("telefono").value,
-        document.getElementById("indumentaria").value,
-        document.getElementById("gim"),
-        document.getElementById("peluqueria").value,
-        document.getElementById("restaurantes").value,
-        document.getElementById("cine").value,
-        document.getElementById("regalos").value,
-        document.getElementById("delivery").value,
-        document.getElementById("caridad").value,
-        document.getElementById("otros").value
+        parseInt(document.getElementById("telefono").value),
+        parseInt(document.getElementById("indumentaria").value),
+        parseInt(document.getElementById("gim").value),
+        parseInt(document.getElementById("peluqueria").value),
+        parseInt(document.getElementById("restaurantes").value),
+        parseInt(document.getElementById("cine").value),
+        parseInt(document.getElementById("regalos").value),
+        parseInt(document.getElementById("delivery").value),
+        parseInt(document.getElementById("caridad").value),
+        parseInt(document.getElementById("otros").value)
     ];
+
+    sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+    sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+
+    sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+    sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+
+    sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+    sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
     
-    fijos.agregarGasto(preguntasFijos, nombresFijos);
-    flexibles.agregarGasto(preguntasFlexibles, nombresFlexibles);
-    extras.agregarGasto(preguntasExtras, nombresExtras);
+    let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
+    let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
+
+    let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
+    let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
+
+    let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
+    let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
+
+
     
-    for(let i = 0; i < fijos.lista.length; i++){
-        alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-    }
-    for(let i = 0; i < flexibles.lista.length; i++){
-        alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-    }
-    for(let i = 0; i < extras.lista.length; i++){
-        alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
-    }
+    fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
+    flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
+    extras.agregarGasto(parseGastosExtras, parseNombresExtras);
+    
+    console.log(parseNombresFijos);
+    console.log(parseGastosFijos);
+
+    console.log(parseNombresFlexibles);
+    console.log(parseGastosFlexibles);
+    
+    console.log(parseNombresExtras);
+    console.log(parseGastosExtras);
+    // for(let i = 0; i < fijos.lista.length; i++){
+    //     alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
+    // }
+    // for(let i = 0; i < flexibles.lista.length; i++){
+    //     alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
+    // }
+    // for(let i = 0; i < extras.lista.length; i++){
+    //     alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
+    // }
 }
  
