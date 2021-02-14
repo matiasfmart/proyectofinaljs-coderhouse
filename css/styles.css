@@ -1,7 +1,55 @@
 body{
-  background-color: rgb(118, 0, 228);
+  background-image: url(/img/background.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 600px 200px;
   color: aliceblue;
 }
-.gastosfijos, .gastosflexibles, .gastosextras, .ingresos{
+h1{
+  color: rgb(0, 21, 46);
+}
+label{
+  color: rgb(0, 21, 46);
+}
+input{
+  background-color: rgba(255, 255, 255, 0.822) !important;
+  color: rgb(0, 21, 46);
+  border-color: rgb(0, 21, 46);
+  padding: 10px 30px;
+  font-size: 20px;
+}
+input:hover{
+  background-color: rgb(0, 21, 46);
+  color: rgb(255, 255, 255);
+  border-color: rgb(0, 21, 46);
+}
+.gastosFijos, .gastosFlexibles, .gastosExtras, .ingresos{
   margin: 100px 0;
+}
+.inicio{
+  height: 500px;
+}
+.inicio__titulo h1{
+  font-size: 80px;
+  font-weight: 700;
+}
+.botones-div{
+  display: block;
+  text-align: center;
+}
+.botones{
+  color: rgb(0, 21, 46) !important;
+  border-color: rgb(0, 21, 46) !important;
+  background-color: transparent !important;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+.botones:hover{
+  background-color: rgb(0, 21, 46) !important;
+  color: rgb(255, 255, 255) !important;
+border-color: rgb(0, 21, 46) !important;
+}
+.ingresos h1{
+  font-size: 70px;
+  font-weight: 700;
 }

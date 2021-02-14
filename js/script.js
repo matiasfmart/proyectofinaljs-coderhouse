@@ -45,214 +45,215 @@ let fijos = new gastos();
 let flexibles = new gastos();
 let extras = new gastos();
 
+$("#bt_comenzar").click(function(){
+    $(".inicio").css("display","none");
+    $(".ingresos").css("display","block");
+});
 
-function enterComenzar(event){
-    if(event.which == 13 || event.keyCode == 13){
-        ingresos = document.getElementById("ingresos");
-        let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
-        let nombresFijos = [
-            "Luz",
-            "Gas",
-            "Agua",
-            "Alquiler",
-            "Transporte",
-            "Estudios"
-        ];
-        let preguntasFijos = [
-            parseInt(document.getElementById("luz").value),
-            parseInt(document.getElementById("gas").value),
-            parseInt(document.getElementById("agua").value),
-            parseInt(document.getElementById("alquiler").value),
-            parseInt(document.getElementById("transporte").value),
-            parseInt(document.getElementById("estudios").value)
-        ];
-        let nombresFlexibles = [
-            "Prepaga/Obrasocial",
-            "Medicamentos",
-            "Supermercado",
-            "Internet",
-            "Telefono",
-            "Mascota"
-        ];
-        let preguntasFlexibles = [
-            parseInt(document.getElementById("prepaga").value),
-            parseInt(document.getElementById("medicamentos").value),
-            parseInt(document.getElementById("supermercado").value),
-            parseInt(document.getElementById("internet").value),
-            parseInt(document.getElementById("telefono").value),
-            parseInt(document.getElementById("mascota").value)
-        ];
-        let nombresExtras = [
-            "Tv/Telefono",
-            "Indumentaria",
-            "Gim/Deportes",
-            "Peluqueria",
-            "Restaurants",
-            "Cine/Teatro",
-            "Regalos",
-            "Delivery",
-            "Caridad",
-            "Otros"
-        ];
-        let preguntasExtras = [
-            parseInt(document.getElementById("telefono").value),
-            parseInt(document.getElementById("indumentaria").value),
-            parseInt(document.getElementById("gim").value),
-            parseInt(document.getElementById("peluqueria").value),
-            parseInt(document.getElementById("restaurantes").value),
-            parseInt(document.getElementById("cine").value),
-            parseInt(document.getElementById("regalos").value),
-            parseInt(document.getElementById("delivery").value),
-            parseInt(document.getElementById("caridad").value),
-            parseInt(document.getElementById("otros").value)
-        ];
+$("#bt_ingresos").click(function(){
+    $(".ingresos").css("display","none");
+    $(".gastosFijos").css("display","block");
+});
 
-        sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
-        sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+$("#bt_gastosFijos").click(function(){
+    $(".gastosFijos").css("display","none");
+    $(".gastosFlexibles").css("display","block");
+});
 
-        sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
-        sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+$("#bt_gastosFlexibles").click(function(){
+    $(".gastosFlexibles").css("display","none");
+    $(".gastosExtras").css("display","block");
+});
 
-        sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
-        sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
+// function enterComenzar(event){
+//     if(event.which == 13 || event.keyCode == 13){
+//         ingresos = document.getElementById("ingresos");
+//         let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
+//         let nombresFijos = [
+//             "Luz",
+//             "Gas",
+//             "Agua",
+//             "Alquiler",
+//             "Transporte",
+//             "Estudios"
+//         ];
+//         let preguntasFijos = [
+//             parseInt(document.getElementById("luz").value),
+//             parseInt(document.getElementById("gas").value),
+//             parseInt(document.getElementById("agua").value),
+//             parseInt(document.getElementById("alquiler").value),
+//             parseInt(document.getElementById("transporte").value),
+//             parseInt(document.getElementById("estudios").value)
+//         ];
+//         let nombresFlexibles = [
+//             "Prepaga/Obrasocial",
+//             "Medicamentos",
+//             "Supermercado",
+//             "Internet",
+//             "Telefono",
+//             "Mascota"
+//         ];
+//         let preguntasFlexibles = [
+//             parseInt(document.getElementById("prepaga").value),
+//             parseInt(document.getElementById("medicamentos").value),
+//             parseInt(document.getElementById("supermercado").value),
+//             parseInt(document.getElementById("internet").value),
+//             parseInt(document.getElementById("telefono").value),
+//             parseInt(document.getElementById("mascota").value)
+//         ];
+//         let nombresExtras = [
+//             "Tv/Telefono",
+//             "Indumentaria",
+//             "Gim/Deportes",
+//             "Peluqueria",
+//             "Restaurants",
+//             "Cine/Teatro",
+//             "Regalos",
+//             "Delivery",
+//             "Caridad",
+//             "Otros"
+//         ];
+//         let preguntasExtras = [
+//             parseInt(document.getElementById("telefono").value),
+//             parseInt(document.getElementById("indumentaria").value),
+//             parseInt(document.getElementById("gim").value),
+//             parseInt(document.getElementById("peluqueria").value),
+//             parseInt(document.getElementById("restaurantes").value),
+//             parseInt(document.getElementById("cine").value),
+//             parseInt(document.getElementById("regalos").value),
+//             parseInt(document.getElementById("delivery").value),
+//             parseInt(document.getElementById("caridad").value),
+//             parseInt(document.getElementById("otros").value)
+//         ];
+
+//         sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+//         sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+
+//         sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+//         sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+
+//         sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+//         sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
         
-        let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
-        let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
+//         let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
+//         let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
 
-        let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
-        let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
+//         let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
+//         let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
 
-        let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
-        let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
+//         let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
+//         let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
 
 
         
-        fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
-        flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
-        extras.agregarGasto(parseGastosExtras, parseNombresExtras);
+//         fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
+//         flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
+//         extras.agregarGasto(parseGastosExtras, parseNombresExtras);
         
-        console.log(parseNombresFijos);
-        console.log(parseGastosFijos);
+//         console.log(parseNombresFijos);
+//         console.log(parseGastosFijos);
 
-        console.log(parseNombresFlexibles);
-        console.log(parseGastosFlexibles);
+//         console.log(parseNombresFlexibles);
+//         console.log(parseGastosFlexibles);
         
-        console.log(parseNombresExtras);
-        console.log(parseGastosExtras);
-        // for(let i = 0; i < fijos.lista.length; i++){
-        //     alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-        // }
-        // for(let i = 0; i < flexibles.lista.length; i++){
-        //     alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-        // }
-        // for(let i = 0; i < extras.lista.length; i++){
-        //     alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
-        // }
-    }
-}
+//         console.log(parseNombresExtras);
+//         console.log(parseGastosExtras);
+//     }
+// }
 
-/*Ingreso de gastos a los vectores */
+// /*Ingreso de gastos a los vectores */
 
-function checkSub(){
-    ingresos = document.getElementById("ingresos");
-    let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
-    let nombresFijos = [
-        "Luz",
-        "Gas",
-        "Agua",
-        "Alquiler",
-        "Transporte",
-        "Estudios"
-    ];
-    let preguntasFijos = [
-        parseInt(document.getElementById("luz").value),
-        parseInt(document.getElementById("gas").value),
-        parseInt(document.getElementById("agua").value),
-        parseInt(document.getElementById("alquiler").value),
-        parseInt(document.getElementById("transporte").value),
-        parseInt(document.getElementById("estudios").value)
-    ];
-    let nombresFlexibles = [
-        "Prepaga/Obrasocial",
-        "Medicamentos",
-        "Supermercado",
-        "Internet",
-        "Telefono",
-        "Mascota"
-    ];
-    let preguntasFlexibles = [
-        parseInt(document.getElementById("prepaga").value),
-        parseInt(document.getElementById("medicamentos").value),
-        parseInt(document.getElementById("supermercado").value),
-        parseInt(document.getElementById("internet").value),
-        parseInt(document.getElementById("telefono").value),
-        parseInt(document.getElementById("mascota").value)
-    ];
-    let nombresExtras = [
-        "Tv/Telefono",
-        "Indumentaria",
-        "Gim/Deportes",
-        "Peluqueria",
-        "Restaurants",
-        "Cine/Teatro",
-        "Regalos",
-        "Delivery",
-        "Caridad",
-        "Otros"
-    ];
-    let preguntasExtras = [
-        parseInt(document.getElementById("telefono").value),
-        parseInt(document.getElementById("indumentaria").value),
-        parseInt(document.getElementById("gim").value),
-        parseInt(document.getElementById("peluqueria").value),
-        parseInt(document.getElementById("restaurantes").value),
-        parseInt(document.getElementById("cine").value),
-        parseInt(document.getElementById("regalos").value),
-        parseInt(document.getElementById("delivery").value),
-        parseInt(document.getElementById("caridad").value),
-        parseInt(document.getElementById("otros").value)
-    ];
+// function checkSub(){
+//     ingresos = document.getElementById("ingresos");
+//     let ahorro = new ahorrar(document.getElementById("ahorro"),document.getElementById("tiempo"));
+//     let nombresFijos = [
+//         "Luz",
+//         "Gas",
+//         "Agua",
+//         "Alquiler",
+//         "Transporte",
+//         "Estudios"
+//     ];
+//     let preguntasFijos = [
+//         parseInt(document.getElementById("luz").value),
+//         parseInt(document.getElementById("gas").value),
+//         parseInt(document.getElementById("agua").value),
+//         parseInt(document.getElementById("alquiler").value),
+//         parseInt(document.getElementById("transporte").value),
+//         parseInt(document.getElementById("estudios").value)
+//     ];
+//     let nombresFlexibles = [
+//         "Prepaga/Obrasocial",
+//         "Medicamentos",
+//         "Supermercado",
+//         "Internet",
+//         "Telefono",
+//         "Mascota"
+//     ];
+//     let preguntasFlexibles = [
+//         parseInt(document.getElementById("prepaga").value),
+//         parseInt(document.getElementById("medicamentos").value),
+//         parseInt(document.getElementById("supermercado").value),
+//         parseInt(document.getElementById("internet").value),
+//         parseInt(document.getElementById("telefono").value),
+//         parseInt(document.getElementById("mascota").value)
+//     ];
+//     let nombresExtras = [
+//         "Tv/Telefono",
+//         "Indumentaria",
+//         "Gim/Deportes",
+//         "Peluqueria",
+//         "Restaurants",
+//         "Cine/Teatro",
+//         "Regalos",
+//         "Delivery",
+//         "Caridad",
+//         "Otros"
+//     ];
+//     let preguntasExtras = [
+//         parseInt(document.getElementById("telefono").value),
+//         parseInt(document.getElementById("indumentaria").value),
+//         parseInt(document.getElementById("gim").value),
+//         parseInt(document.getElementById("peluqueria").value),
+//         parseInt(document.getElementById("restaurantes").value),
+//         parseInt(document.getElementById("cine").value),
+//         parseInt(document.getElementById("regalos").value),
+//         parseInt(document.getElementById("delivery").value),
+//         parseInt(document.getElementById("caridad").value),
+//         parseInt(document.getElementById("otros").value)
+//     ];
 
-    sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
-    sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+//     sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+//     sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
 
-    sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
-    sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+//     sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+//     sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
 
-    sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
-    sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
+//     sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+//     sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
     
-    let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
-    let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
+//     let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
+//     let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
 
-    let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
-    let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
+//     let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
+//     let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
 
-    let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
-    let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
+//     let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
+//     let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
 
 
     
-    fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
-    flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
-    extras.agregarGasto(parseGastosExtras, parseNombresExtras);
+//     fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
+//     flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
+//     extras.agregarGasto(parseGastosExtras, parseNombresExtras);
     
-    console.log(parseNombresFijos);
-    console.log(parseGastosFijos);
+//     console.log(parseNombresFijos);
+//     console.log(parseGastosFijos);
 
-    console.log(parseNombresFlexibles);
-    console.log(parseGastosFlexibles);
+//     console.log(parseNombresFlexibles);
+//     console.log(parseGastosFlexibles);
     
-    console.log(parseNombresExtras);
-    console.log(parseGastosExtras);
-    // for(let i = 0; i < fijos.lista.length; i++){
-    //     alert(`Usted gasta en ${fijos.nombre[i]} = $${fijos.lista[i]}`);
-    // }
-    // for(let i = 0; i < flexibles.lista.length; i++){
-    //     alert(`Usted gasta en ${flexibles.nombre[i]} = $${flexibles.lista[i]}`);
-    // }
-    // for(let i = 0; i < extras.lista.length; i++){
-    //     alert(`Usted gasta en ${extras.nombre[i]} = $${extras.lista[i]}`);
-    // }
-}
+//     console.log(parseNombresExtras);
+//     console.log(parseGastosExtras);
+// }
  
