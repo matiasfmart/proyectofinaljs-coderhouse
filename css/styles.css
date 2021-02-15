@@ -7,6 +7,9 @@ body{
 }
 h1{
   color: rgb(0, 21, 46);
+  margin: 50px;
+  font-size: 80px;
+  font-weight: 700;
 }
 label{
   color: rgb(0, 21, 46);
@@ -25,13 +28,10 @@ input:hover{
 }
 .gastosFijos, .gastosFlexibles, .gastosExtras, .ingresos{
   margin: 100px 0;
+  display: none;
 }
 .inicio{
   height: 500px;
-}
-.inicio__titulo h1{
-  font-size: 80px;
-  font-weight: 700;
 }
 .botones-div{
   display: block;
@@ -48,8 +48,4 @@ input:hover{
   background-color: rgb(0, 21, 46) !important;
   color: rgb(255, 255, 255) !important;
 border-color: rgb(0, 21, 46) !important;
-}
-.ingresos h1{
-  font-size: 70px;
-  font-weight: 700;
 }
