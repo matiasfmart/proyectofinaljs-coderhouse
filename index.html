@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="./css/styles.css" rel="stylesheet" type="text/css">
     <title>Proyecto Final</title>
@@ -12,10 +16,13 @@
     <header>
 <!-- Just an image -->
         <nav class="navbar navbar-light bg-light">
-            <div class="container">
             <a class="navbar-brand" href="#">
-                tuAhorro.com
+                <img src="/img/logotipo_header.png" alt="">piggy
             </a>
+            <div class="container navs">
+                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="#">¿Cómo funciona?</a>
+                <a class="nav-link" href="#">Contactanos</a>
             </div>
         </nav>
     </header>
@@ -23,14 +30,14 @@
         <div class="row inicio__titulo">
             <h1 class="col-md-11 col-xs-10" style="padding: 100px;">Calcula tus gastos, y cumpli tu objetivo de ahorro!</h1>
             <div class="col-md-4 botones-div">
-                <button type="submit" class="btn btn-outline-primary botones" id="bt_comenzar" value="submit">Comenzar</button>
+                <button type="button" class="btn btn-outline-primary botones" id="bt_comenzar" value="submit">Comenzar</button>
             </div>  
         </div>
     </section>
     <form class="container ingresos">
         <div class="row">
             <div class="col-md-9 col-xs-10">
-                <h1>Ingresa tu objetivo de ahorro</h1>
+                <h1 class="justify-content-center">Ingresa tu objetivo de ahorro</h1>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Total de tus ingresos</label>
@@ -43,20 +50,23 @@
                     <span class="input-group-text" id="basic-addon3">$</span>
                     <input type="number" class="form-control" id="ahorro" aria-describedby="basic-addon3" value="">
                 </div>
-                <label class="form-label">Tiempo en el que necesita el dinero</label>
+                <label class="form-label">Tiempo en el que necesita el dinero (meses)</label>
                 <div class="input-group mb-3">
                     <input type="number" class="form-control" id="tiempo" aria-describedby="basic-addon3" value="">
                 </div>
             </div>
             <div class="col-md-4 botones-div">
-                <button type="submit" class="btn btn-outline-primary botones" id="bt_ingresos" value="submit">Siguiente</button>
+                <button type="button" class="btn btn-outline-primary botones" id="bt_ingresos" value="submit">Siguiente</button>
             </div>
         </div>
     </form>
     <form class="container gastosFijos">
         <div class="row">
-            <div class="col-md-9 align-self-center">
+            <div class="col-md-9">
                 <h1>Ingresemos tus gastos fijos!</h1>
+                <div class="col-md-4 botones-div">
+                    <button type="button" class="btn btn-outline-primary botones" id="bt_gastosFijos" value="submit">Siguiente</button>
+                </div>  
             </div>
             <div class="col-md-3">
                 <label class="form-label">Luz</label>
@@ -90,15 +100,15 @@
                     <input type="number" class="form-control" id="estudios" aria-describedby="basic-addon3" value="">
                 </div>
             </div>
-            <div class="col-md-4 botones-div">
-                <button type="submit" class="btn btn-outline-primary botones" id="bt_gastosFijos" value="submit">Siguiente</button>
-            </div>  
         </div>
     </form>
     <form class="container gastosFlexibles">
         <div class="row">
-            <div class="col-md-9 align-self-center">
+            <div class="col-md-9">
                 <h1>Ahora tus gastos flexibles!</h1>
+                <div class="col-md-4 botones-div">
+                    <button type="button" class="btn btn-outline-primary botones" id="bt_gastosFlexibles" value="submit">Siguiente</button>
+                </div>  
             </div>
             <div class="col-md-3">
                 <label class="form-label">Medicina Prepaga</label>
@@ -132,15 +142,15 @@
                     <input type="number" class="form-control" id="mascota" aria-describedby="basic-addon3" value="">
                 </div>
             </div>
-            <div class="col-md-4 botones-div">
-                <button type="submit" class="btn btn-outline-primary botones" id="bt_gastosFlexibles" value="submit">Siguiente</button>
-            </div>  
         </div>
     </form>
     <form class="container gastosExtras">
         <div class="row">
-            <div class="col-md-8 align-self-center">
+            <div class="col-md-8">
                 <h1>Ahora tus gastos extras!</h1>
+                <div class="col-md-4 botones-div">
+                    <button type="button" class="btn btn-outline-primary botones"  id="bt_gastosExtras" value="submit">Calcular</button>
+                </div>  
             </div>
             <div class="col-md-2">
                 <label class="form-label">Tv/Telefono</label>
@@ -196,9 +206,6 @@
                     <input type="number" class="form-control" id="otros" aria-describedby="basic-addon3" value="">
                 </div>
             </div>
-            <div class="col-md-4 botones-div">
-                <button type="submit" class="btn btn-outline-primary botones"  id="bt_gastosExtras" value="submit">Calcular</button>
-            </div>  
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

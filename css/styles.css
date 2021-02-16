@@ -5,8 +5,28 @@ body{
   background-position: 600px 200px;
   color: aliceblue;
 }
+.navbar{
+  background-color: transparent !important;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+}
+.navbar-brand{
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+  color: #297FDC !important;
+}
+.navs{
+  width: 50%;
+  font-family: 'Nunito', sans-serif;
+}
+.nav-link{
+  color: #297FDC;
+  font-size: 22px;
+}
 h1{
-  color: rgb(0, 21, 46);
+  color: rgb(19, 26, 36);
+  font-family: 'Roboto', sans-serif;
   margin: 50px;
   font-size: 80px;
   font-weight: 700;
@@ -15,7 +35,7 @@ label{
   color: rgb(0, 21, 46);
 }
 input{
-  background-color: rgba(255, 255, 255, 0.822) !important;
+  background-color: rgba(255, 255, 255, 0.884) !important;
   color: rgb(0, 21, 46);
   border-color: rgb(0, 21, 46);
   padding: 10px 30px;
@@ -23,15 +43,11 @@ input{
 }
 input:hover{
   background-color: rgb(0, 21, 46);
-  color: rgb(255, 255, 255);
   border-color: rgb(0, 21, 46);
 }
 .gastosFijos, .gastosFlexibles, .gastosExtras, .ingresos{
   margin: 100px 0;
   display: none;
-}
-.inicio{
-  height: 500px;
 }
 .botones-div{
   display: block;
@@ -47,5 +63,5 @@ input:hover{
 .botones:hover{
   background-color: rgb(0, 21, 46) !important;
   color: rgb(255, 255, 255) !important;
-border-color: rgb(0, 21, 46) !important;
+  border-color: rgb(0, 21, 46) !important;
 }

@@ -45,14 +45,17 @@ let fijos = new gastos();
 let flexibles = new gastos();
 let extras = new gastos();
 
+
 $("#bt_comenzar").click(function(){
     $(".inicio").css("display","none");
     $(".ingresos").css("display","block");
+    $("body").css("background-image","url(/img/background_ingresos.jpg)");
 });
 
 $("#bt_ingresos").click(function(){
     $(".ingresos").css("display","none");
     $(".gastosFijos").css("display","block");
+    $("body").css("background-image","url(/img/background_fijos.jpg)");
     ingresos = parseInt(document.getElementById("ingresos").value);
     let ahorro = new ahorrar(parseInt(document.getElementById("ahorro").value),parseInt(document.getElementById("tiempo").value));
     console.log(ingresos);
@@ -63,6 +66,7 @@ $("#bt_ingresos").click(function(){
 $("#bt_gastosFijos").click(function(){
     $(".gastosFijos").css("display","none");
     $(".gastosFlexibles").css("display","block");
+    $("body").css("background-image","url(/img/background_flexibles.jpg)");
     let nombresFijos = [
         "Luz",
         "Gas",
@@ -93,6 +97,7 @@ $("#bt_gastosFijos").click(function(){
 $("#bt_gastosFlexibles").click(function(){
     $(".gastosFlexibles").css("display","none");
     $(".gastosExtras").css("display","block");
+    $("body").css("background-image","url(/img/background_extras.jpg)");
     let nombresFlexibles = [
         "Prepaga/Obrasocial",
         "Medicamentos",
