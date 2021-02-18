@@ -2,13 +2,15 @@ class gastos{
     constructor(){
         this.lista = [];
         this.nombre = [];
-        this.listaAux = this.lista.slice();
+        this.listaAux = [];
+        this.ahorrar = [];
     }
     agregarGasto = function(gasto, nombre){
         for(let i = 0; i < gasto.length; i++){
             this.lista.push(gasto[i]);
             this.nombre.push(nombre[i]);
         }
+        this.listaAux = this.lista.slice();
     }
     total = function(){
         let totalGastos = 0;
@@ -19,10 +21,9 @@ class gastos{
     }
     diferencia = function(){
         for (let i = 0; i < this.lista.length; i++) {
-            let ahorrar = [];
-            ahorrar[i] = this.listaAux[i] - this.lista[i]; //Saco el ahorro diario restando el gasto original, con el gasto luego de haber procesado los datos...
+            let dif = this.listaAux[i] - this.lista[i]; //Saco el ahorro diario restando el gasto original, con el gasto luego de haber procesado los datos...
+            this.ahorrar.push(dif);
         }
-        return ahorrar;
     }
 }
 
@@ -228,8 +229,10 @@ $("#bt_gastosExtras").click(function(){
                 }
             }
         }
-        for(let i = 0; i < fijos.lista.length; i++){
-            console.log(`${fijos.nombre[i]}: $${fijos.listaAux[i]} - Ahorrar $${flexibles.diferencia[i]}. = Total $${flexibles.lista[i]}`);
-        }
+    }
+    console.log(acum_mensual);
+    for(let i = 0; i < extras.lista.length; i++){
+        extras.diferencia();
+        console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
     }
 });
