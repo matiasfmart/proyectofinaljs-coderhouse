@@ -19,9 +19,10 @@ class gastos{
     }
     diferencia = function(){
         for (let i = 0; i < this.lista.length; i++) {
-            this.ahorrar[i] = this.listaAux[i] - this.lista[i]; //Saco el ahorro diario restando el gasto original, con el gasto luego de haber procesado los datos...
+            let ahorrar = [];
+            ahorrar[i] = this.listaAux[i] - this.lista[i]; //Saco el ahorro diario restando el gasto original, con el gasto luego de haber procesado los datos...
         }
-        return this.ahorrar;
+        return ahorrar;
     }
 }
 
@@ -47,6 +48,8 @@ let ingresos = 0;
 let fijos = new gastos();
 let flexibles = new gastos();
 let extras = new gastos();
+let ahorro = new ahorrar();
+
 
 
 $("#bt_comenzar").click(function(){
@@ -60,7 +63,8 @@ $("#bt_ingresos").click(function(){
     $(".gastosFijos").css("display","block");
     $("body").css("background-image","url(/img/background_fijos.jpg)");
     ingresos = parseInt(document.getElementById("ingresos").value);
-    let ahorro = new ahorrar(parseInt(document.getElementById("ahorro").value),parseInt(document.getElementById("tiempo").value));
+    ahorro.ahorro = parseInt(document.getElementById("ahorro").value);
+    ahorro.tiempo = parseInt(document.getElementById("tiempo").value);
     console.log(ingresos);
     console.log(ahorro.ahorro);
     console.log(ahorro.tiempo);
@@ -78,6 +82,7 @@ $("#bt_gastosFijos").click(function(){
         "Transporte",
         "Estudios"
     ];
+
     let preguntasFijos = [
         parseInt(document.getElementById("luz").value),
         parseInt(document.getElementById("gas").value),
@@ -223,6 +228,8 @@ $("#bt_gastosExtras").click(function(){
                 }
             }
         }
+        for(let i = 0; i < fijos.lista.length; i++){
+            console.log(`${fijos.nombre[i]}: $${fijos.listaAux[i]} - Ahorrar $${flexibles.diferencia[i]}. = Total $${flexibles.lista[i]}`);
+        }
     }
-
 });
