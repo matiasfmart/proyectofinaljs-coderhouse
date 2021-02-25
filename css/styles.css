@@ -1,8 +1,4 @@
 body{
-  background-image: url(/img/background.jpg);
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: 600px 200px;
   color: aliceblue;
 }
 .navbar{
@@ -25,8 +21,8 @@ body{
   font-size: 22px;
 }
 h1{
-  color: rgb(19, 26, 36);
-  font-family: 'Roboto', sans-serif;
+  color: rgb(28, 39, 54);
+  font-family: 'Rubik', sans-serif;
   margin: 50px;
   font-size: 80px;
   font-weight: 700;
@@ -44,6 +40,37 @@ input{
 input:hover{
   background-color: rgb(0, 21, 46);
   border-color: rgb(0, 21, 46);
+}
+.inicio{
+  background-image: url(/img/background.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 600px 100px;
+}
+.ingresos{
+  background-image: url(/img/background_ingresos.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 500px 10px;
+  height: 100% !important;
+}
+.gastosFijos{
+  background-image: url(/img/background_fijos.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 500px 10px;
+}
+.gastosFlexibles{
+  background-image: url(/img/background_flexibles.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 500px 10px;
+}
+.gastosExtras{
+  background-image: url(/img/background_extras.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 500px -10px;
 }
 .gastosFijos, .gastosFlexibles, .gastosExtras, .ingresos{
   margin: 100px 0;

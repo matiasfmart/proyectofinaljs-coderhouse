@@ -54,84 +54,86 @@ let ahorro = new ahorrar();
 
 
 $("#bt_comenzar").click(function(){
-    $(".inicio").css("display","none");
-    $(".ingresos").css("display","block");
-    $("body").css("background-image","url(/img/background_ingresos.jpg)");
+    $(".inicio").fadeOut(500, function(){
+        $(".ingresos").fadeIn(500);
+    });
 });
 
 $("#bt_ingresos").click(function(){
-    $(".ingresos").css("display","none");
-    $(".gastosFijos").css("display","block");
-    $("body").css("background-image","url(/img/background_fijos.jpg)");
-    ingresos = parseInt(document.getElementById("ingresos").value);
-    ahorro.ahorro = parseInt(document.getElementById("ahorro").value);
-    ahorro.tiempo = parseInt(document.getElementById("tiempo").value);
-    console.log(ingresos);
-    console.log(ahorro.ahorro);
-    console.log(ahorro.tiempo);
+    $(".ingresos").fadeOut(500, function(){
+        $(".gastosFijos").fadeIn(500);
+        ingresos = parseInt(document.getElementById("ingresos").value);
+        ahorro.ahorro = parseInt(document.getElementById("ahorro").value);
+        ahorro.tiempo = parseInt(document.getElementById("tiempo").value);
+        console.log(ingresos);
+        console.log(ahorro.ahorro);
+        console.log(ahorro.tiempo);
+    })
 });
 
 $("#bt_gastosFijos").click(function(){
-    $(".gastosFijos").css("display","none");
-    $(".gastosFlexibles").css("display","block");
-    $("body").css("background-image","url(/img/background_flexibles.jpg)");
-    let nombresFijos = [
-        "Luz",
-        "Gas",
-        "Agua",
-        "Alquiler",
-        "Transporte",
-        "Estudios"
-    ];
-
-    let preguntasFijos = [
-        parseInt(document.getElementById("luz").value),
-        parseInt(document.getElementById("gas").value),
-        parseInt(document.getElementById("agua").value),
-        parseInt(document.getElementById("alquiler").value),
-        parseInt(document.getElementById("transporte").value),
-        parseInt(document.getElementById("estudios").value)
-    ];
-    sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
-    sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
-
-    let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
-    let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
-
-    fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
-    console.log(fijos.lista);
-    console.log(fijos.nombre);
+    $(".gastosFijos").fadeOut(500, function(){
+        $(".gastosFlexibles").fadeIn(500);
+        let nombresFijos = [
+            "Luz",
+            "Gas",
+            "Agua",
+            "Alquiler",
+            "Transporte",
+            "Estudios"
+        ];
+    
+        let preguntasFijos = [
+            parseInt(document.getElementById("luz").value),
+            parseInt(document.getElementById("gas").value),
+            parseInt(document.getElementById("agua").value),
+            parseInt(document.getElementById("alquiler").value),
+            parseInt(document.getElementById("transporte").value),
+            parseInt(document.getElementById("estudios").value)
+        ];
+        sessionStorage.setItem("gastosFijos", JSON.stringify(preguntasFijos));
+        sessionStorage.setItem("nombresGastosFijos", JSON.stringify(nombresFijos));
+    
+        let parseGastosFijos = JSON.parse(sessionStorage.getItem("gastosFijos"));
+        let parseNombresFijos = JSON.parse(sessionStorage.getItem("nombresGastosFijos"));
+    
+        fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
+        console.log(fijos.lista);
+        console.log(fijos.nombre);
+    })
 });
 
 $("#bt_gastosFlexibles").click(function(){
-    $(".gastosFlexibles").css("display","none");
-    $(".gastosExtras").css("display","block");
-    $("body").css("background-image","url(/img/background_extras.jpg)");
-    let nombresFlexibles = [
-        "Prepaga/Obrasocial",
-        "Medicamentos",
-        "Supermercado",
-        "Internet",
-        "Telefono",
-        "Mascota"
-    ];
-    let preguntasFlexibles = [
-        parseInt(document.getElementById("prepaga").value),
-        parseInt(document.getElementById("medicamentos").value),
-        parseInt(document.getElementById("supermercado").value),
-        parseInt(document.getElementById("internet").value),
-        parseInt(document.getElementById("telefono").value),
-        parseInt(document.getElementById("mascota").value)
-    ];
-    sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
-    sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+    $(".gastosFlexibles").fadeOut(500, function(){
+        $(".gastosExtras").fadeIn(500);
+        $("body").css("background-image","url(/img/background_extras.jpg)");
+        let nombresFlexibles = [
+            "Prepaga/Obrasocial",
+            "Medicamentos",
+            "Supermercado",
+            "Internet",
+            "Telefono",
+            "Mascota"
+        ];
+        let preguntasFlexibles = [
+            parseInt(document.getElementById("prepaga").value),
+            parseInt(document.getElementById("medicamentos").value),
+            parseInt(document.getElementById("supermercado").value),
+            parseInt(document.getElementById("internet").value),
+            parseInt(document.getElementById("telefono").value),
+            parseInt(document.getElementById("mascota").value)
+        ];
+        sessionStorage.setItem("gastosFlexibles", JSON.stringify(preguntasFlexibles));
+        sessionStorage.setItem("nombresGastosFlexibles", JSON.stringify(nombresFlexibles));
+        
+        let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
+        let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
     
-    let parseGastosFlexibles = JSON.parse(sessionStorage.getItem("gastosFlexibles"));
-    let parseNombresFlexibles = JSON.parse(sessionStorage.getItem("nombresGastosFlexibles"));
+        flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
+        console.log(flexibles.lista);
+        console.log(flexibles.nombre);
+    })
 
-    flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
-    console.log(flexibles.lista);
-    console.log(flexibles.nombre);
 });
 $("#bt_gastosExtras").click(function(){
     let nombresExtras = [
