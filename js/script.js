@@ -203,8 +203,8 @@ $("#bt_gastosExtras").click(function(){
         /*Utilizando la regla 50/30/20 descuento los gastos segun porcentaje*/
         
         /*Si el total de gastos innecesarios o extras es mayor al 30% de los ingresos del usuario ingresa a un bucle para comenzar a reducir los gastos hasta la condicion*/
-        if(extras.total() > (ingresos*0.3)){
-            while(extras.total() > (ingresos*0.3)){
+        if(extras.total() > (ingresos*0.3) && extras.total() != 0){
+            while(extras.total() > (ingresos*0.3) && extras.total() != 0){
                 for(let i = 10; i >= 0; i--){
                     extras.lista[i] = extras.lista[i] - i;  //Utilizo variables auxiliares replicas de las originales ingresadas por el usuario para no perder informacion
                     acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
@@ -213,11 +213,11 @@ $("#bt_gastosExtras").click(function(){
 
         /*una vez finalizada la condicion anterior, si aun asi la variable acum no llega a cubrir el ahorro diario necesario
         comienza el descuento de los gastos flexibles en base a la misma regla 50/30/20 ---*/
-        }else if(totalFijosFlex > (ingresos*0.5)){
+        }else if(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
 
             /*Se ingresa al bucle calculando el total de gastos fijos sumando a los flexibles, pero solo se reducen los gastos flexibles
             para que de esa manera no se reduzcan los gastos mas importantes que son los fijos (alquileres, luz, agua, gas, estudios etc.) */
-            while(totalFijosFlex > (ingresos*0.5)){
+            while(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
                 for(let i = 10; i >= 0; i--){
                     flexibles.lista[i] = flexibles.lista[i] - i;
                     acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
@@ -236,7 +236,7 @@ $("#bt_gastosExtras").click(function(){
                         extras.total();
                         aux = false;
                     }
-                }else{                
+                }else{
                     for(let i = 10; i >= 0; i--){
                         flexibles.lista[i] = flexibles.lista[i] - i;
                         acum_mensual = acum_mensual + i;
