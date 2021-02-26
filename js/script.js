@@ -70,6 +70,11 @@ $("#bt_ingresos").click(function(){
         console.log(ahorro.tiempo);
     })
 });
+$("#bt_ingresosVolver").click(function(){
+    $(".ingresos").fadeOut(500, function(){
+        $(".inicio").fadeIn(500);
+    });
+});
 
 $("#bt_gastosFijos").click(function(){
     $(".gastosFijos").fadeOut(500, function(){
@@ -101,6 +106,11 @@ $("#bt_gastosFijos").click(function(){
         console.log(fijos.lista);
         console.log(fijos.nombre);
     })
+});
+$("#bt_fijosVolver").click(function(){
+    $(".gastosFijos").fadeOut(500, function(){
+        $(".ingresos").fadeIn(500);
+    });
 });
 
 $("#bt_gastosFlexibles").click(function(){
@@ -134,6 +144,11 @@ $("#bt_gastosFlexibles").click(function(){
         console.log(flexibles.nombre);
     })
 
+});
+$("#bt_flexiblesVolver").click(function(){
+    $(".gastosFlexibles").fadeOut(500, function(){
+        $(".gastosFijos").fadeIn(500);
+    });
 });
 $("#bt_gastosExtras").click(function(){
     let nombresExtras = [
@@ -237,4 +252,9 @@ $("#bt_gastosExtras").click(function(){
         extras.diferencia();
         console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
     }
+});
+$("#bt_extrasVolver").click(function(){
+    $(".gastosExtras").fadeOut(500, function(){
+        $(".gastosFlexibles").fadeIn(500);
+    });
 });
