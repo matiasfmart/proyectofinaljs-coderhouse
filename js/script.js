@@ -228,22 +228,27 @@ $("#bt_gastosExtras").click(function(){
         /*Si aun despues de reducir todos los gastos flexibles y extras no se llega a cubrir el ahorro diario, se vuelven a descontar los gastos extras
         hasta cubrir el monto. El objetivo es no descontar los gastos fijos */
         }else{
-            while(ahorroMensualTotal > acum_mensual){
-                if(aux){
-                    for(let i = 10; i >= 0; i--){
-                        extras.lista[i] = extras.lista[i] - i;
-                        acum_mensual = acum_mensual + i;
-                        extras.total();
-                        aux = false;
-                    }
-                }else{
-                    for(let i = 10; i >= 0; i--){
-                        flexibles.lista[i] = flexibles.lista[i] - i;
-                        acum_mensual = acum_mensual + i;
-                        totalFijosFlex = fijos.total() + flexibles.total();
-                        aux = true;
+            if((totalFijosFlex != 0) && (extras.total() != 0)){
+                while(ahorroMensualTotal > acum_mensual){
+                    if(aux){
+                        for(let i = 10; i >= 0; i--){
+                            extras.lista[i] = extras.lista[i] - i;
+                            acum_mensual = acum_mensual + i;
+                            extras.total();
+                            aux = false;
+                        }
+                    }else{
+                        for(let i = 10; i >= 0; i--){
+                            flexibles.lista[i] = flexibles.lista[i] - i;
+                            acum_mensual = acum_mensual + i;
+                            totalFijosFlex = fijos.total() + flexibles.total();
+                            aux = true;
+                        }
                     }
                 }
+            }else{
+                console.log("No se pudo llegar a ahorrar");
+                continue;
             }
         }
     }
@@ -251,6 +256,10 @@ $("#bt_gastosExtras").click(function(){
     for(let i = 0; i < extras.lista.length; i++){
         extras.diferencia();
         console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
+    }
+    for(let i = 0; i < flexibles.lista.length; i++){
+        flexibles.diferencia();
+        console.log(`${flexibles.nombre[i]}: $${flexibles.listaAux[i]} - Ahorrar $${flexibles.ahorrar[i]}. = Total $${flexibles.lista[i]}`);
     }
 });
 $("#bt_extrasVolver").click(function(){
