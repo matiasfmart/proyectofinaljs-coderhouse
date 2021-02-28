@@ -59,7 +59,7 @@ input:hover{
   background-size: 45%;
   background-repeat: no-repeat;
   background-position: 800px 50px;
-  height: 100vh;
+  height: 60vh;
 }
 .comoFunciona__img{
   margin: 100px auto;
@@ -68,13 +68,55 @@ input:hover{
   font-size: 30px;
   text-align: center;
 }
+.contactanos{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/img/background_contactanos.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 700px 100px;
+}
+.contactanos h1{
+  width: 60%;
+  text-align: left;
+}
+.contactanos h2{
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  width: 60%;
+  margin: 100px auto;
+  font-weight: bold;
+  background-color:  #297FDC;
+}
 .ing, .gast, .calc{
-  margin: auto;
-  border-right: black solid 1px;
+  border-right: rgb(25, 26, 104) solid 1px;
   height: 500px;
+  transition: .5s;
+  filter: grayscale(.3);
+}
+.calc{
+  border-right: none;
+}
+.ing:hover{
+  position: relative;
+  transform:scale(1.02);
+  filter: none;
+}
+.gast:hover{  
+  position: relative;
+  transform:scale(1.02);
+  filter: none;
+}
+.calc:hover{
+  position: relative;
+  transform:scale(1.02);
+  filter: none;
 }
 .ing img, .gast img, .calc img{
-  width: 300px;
+  width: 350px;
 }
 .ingresos{
   background-image: url(/img/background_ingresos.jpg);
