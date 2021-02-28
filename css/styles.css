@@ -13,7 +13,7 @@ body{
   color: #297FDC !important;
 }
 .navs{
-  width: 45%;
+  width: 50%;
   font-family: 'Nunito', sans-serif;
 }
 .nav-link{
@@ -26,6 +26,11 @@ h1{
   margin: 50px;
   font-size: 80px;
   font-weight: 700;
+}
+p{
+  color: rgb(0, 47, 112);
+  margin: 50px;
+  font-size: 20px;
 }
 label{
   color: rgb(0, 21, 46);
@@ -46,6 +51,30 @@ input:hover{
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 600px 100px;
+  height: 100vh;
+}
+
+.comoFunciona{
+  background-image: url(/img/background_presentacion.jpg);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: 800px 50px;
+  height: 100vh;
+}
+.comoFunciona__img{
+  margin: 100px auto;
+}
+.comoFunciona__img h1{
+  font-size: 30px;
+  text-align: center;
+}
+.ing, .gast, .calc{
+  margin: auto;
+  border-right: black solid 1px;
+  height: 500px;
+}
+.ing img, .gast img, .calc img{
+  width: 300px;
 }
 .ingresos{
   background-image: url(/img/background_ingresos.jpg);
