@@ -53,6 +53,7 @@ input:hover{
   background-repeat: no-repeat;
   background-position: 500px 10px;
   height: 100vh;
+  margin: 100px;
 }
 .gastosFijos{
   background-image: url(/img/background_fijos.jpg);
@@ -75,7 +76,7 @@ input:hover{
   background-position: 500px -10px;
   height: 100vh;
 }
-.gastosFijos, .gastosFlexibles, .gastosExtras, .ingresos{
+.gastosFijos, .gastosFlexibles, .gastosExtras{
   margin: 100px 0;
   display: none;
 }

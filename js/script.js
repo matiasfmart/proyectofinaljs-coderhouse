@@ -53,11 +53,11 @@ let ahorro = new ahorrar();
 
 
 
-$("#bt_comenzar").click(function(){
-    $(".inicio").fadeOut(500, function(){
-        $(".ingresos").fadeIn(500);
-    });
-});
+// $("#bt_comenzar").click(function(){
+//     $(".inicio").fadeOut(500, function(){
+//         $(".ingresos").fadeIn(500);
+//     });
+// });
 
 $("#bt_ingresos").click(function(){
     $(".ingresos").fadeOut(500, function(){
