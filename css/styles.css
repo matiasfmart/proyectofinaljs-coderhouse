@@ -1,11 +1,17 @@
 body{
   color: aliceblue;
 }
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
 .navbar{
-  background-color: rgba(255, 255, 255, 0.671) !important;
+  background-color: rgba(255, 255, 255, 0.938) !important;
   width: 90%;
   height: 100px;
-  margin: auto;
+  margin: auto;;
 }
 .navbar-brand{
   font-family: 'Nunito', sans-serif;
@@ -51,6 +57,7 @@ input:hover{
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 600px 100px;
+  margin-top: 100px;
   height: 100vh;
 }
 
@@ -62,7 +69,7 @@ input:hover{
   height: 60vh;
 }
 .comoFunciona__img{
-  margin: 100px auto;
+  margin: 150px auto;
 }
 .comoFunciona__img h1{
   font-size: 30px;
