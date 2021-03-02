@@ -53,6 +53,11 @@ let ahorro = new ahorrar();
 
 
 
+// $("#bt_comenzar").click(function(){
+//     $(".inicio").fadeOut(500, function(){
+//         $(".ingresos").fadeIn(500);
+//     });
+// });
 
 $("#bt_ingresos").click(function(){
     $(".ingresos").fadeOut(500, function(){
@@ -63,7 +68,7 @@ $("#bt_ingresos").click(function(){
         console.log(ingresos);
         console.log(ahorro.ahorro);
         console.log(ahorro.tiempo);
-    })
+    });
 });
 $("#bt_ingresosVolver").click(function(){
     $(".ingresos").fadeOut(500, function(){
@@ -100,7 +105,7 @@ $("#bt_gastosFijos").click(function(){
         fijos.agregarGasto(parseGastosFijos, parseNombresFijos);
         console.log(fijos.lista);
         console.log(fijos.nombre);
-    })
+    });
 });
 $("#bt_fijosVolver").click(function(){
     $(".gastosFijos").fadeOut(500, function(){
@@ -137,8 +142,7 @@ $("#bt_gastosFlexibles").click(function(){
         flexibles.agregarGasto(parseGastosFlexibles, parseNombresFlexibles);
         console.log(flexibles.lista);
         console.log(flexibles.nombre);
-    })
-
+    });
 });
 $("#bt_flexiblesVolver").click(function(){
     $(".gastosFlexibles").fadeOut(500, function(){
