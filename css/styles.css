@@ -102,7 +102,6 @@ input:hover{
   border-right: rgb(25, 26, 104) solid 1px;
   height: 500px;
   transition: .5s;
-  filter: grayscale(.3);
 }
 .calc{
   border-right: none;
@@ -110,17 +109,14 @@ input:hover{
 .ing:hover{
   position: relative;
   transform:scale(1.02);
-  filter: none;
 }
 .gast:hover{  
   position: relative;
   transform:scale(1.02);
-  filter: none;
 }
 .calc:hover{
   position: relative;
   transform:scale(1.02);
-  filter: none;
 }
 .ing img, .gast img, .calc img{
   width: 350px;
@@ -130,29 +126,41 @@ input:hover{
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
-  height: 100vh;
+  height: 60vh;
   margin: 100px;
+}
+.ingresos .row{
+  margin-top: 200px;
 }
 .gastosFijos{
   background-image: url(/img/background_fijos.jpg);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
-  height: 100vh;
+}
+.gastosFijos .row{
+  margin-top: 200px;
 }
 .gastosFlexibles{
   background-image: url(/img/background_flexibles.jpg);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
-  height: 100vh;
+  height: 60vh;
+  margin-top: 100px;
+}
+.gastosFlexibles .row{
+  margin-top: 200px;
 }
 .gastosExtras{
   background-image: url(/img/background_extras.jpg);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px -10px;
-  height: 100vh;
+  height: 60vh;
+}
+.gastosExtras .row{
+  margin-top: 200px;
 }
 .gastosFijos, .gastosFlexibles, .gastosExtras{
   margin: 100px 0;
