@@ -53,7 +53,7 @@ input:hover{
   border-color: rgb(0, 21, 46);
 }
 .inicio{
-  background-image: url("/img/background.jpg");
+  background-image: url("../img/background.jpg");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 600px 100px;
@@ -62,7 +62,7 @@ input:hover{
 }
 
 .comoFunciona{
-  background-image: url("/img/background_presentacion.jpg");
+  background-image: url("../img/background_presentacion.jpg");
   background-size: 45%;
   background-repeat: no-repeat;
   background-position: 800px 50px;
@@ -80,7 +80,7 @@ input:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/img/background_contactanos.jpg");
+  background-image: url("../img/background_contactanos.jpg");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: 700px 100px;
@@ -122,7 +122,7 @@ input:hover{
   width: 350px;
 }
 .ingresos{
-  background-image: url("/img/background_ingresos.jpg");
+  background-image: url("../img/background_ingresos.jpg");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
@@ -133,7 +133,7 @@ input:hover{
   margin-top: 200px;
 }
 .gastosFijos{
-  background-image: url("/img/background_fijos.jpg");
+  background-image: url("../img/background_fijos.jpg");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
@@ -142,7 +142,7 @@ input:hover{
   margin-top: 200px;
 }
 .gastosFlexibles{
-  background-image: url("/img/background_flexibles.jpg");
+  background-image: url("../img/background_flexibles.jpg");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px 10px;
@@ -153,7 +153,7 @@ input:hover{
   margin-top: 200px;
 }
 .gastosExtras{
-  background-image: url("/img/background_extras.jpg");
+  background-image: url("../img/background_extras.jpg");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 500px -10px;
