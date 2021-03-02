@@ -70,11 +70,6 @@ $("#bt_ingresos").click(function(){
         console.log(ahorro.tiempo);
     });
 });
-$("#bt_ingresosVolver").click(function(){
-    $(".ingresos").fadeOut(500, function(){
-        $(".inicio").fadeIn(500);
-    });
-});
 
 $("#bt_gastosFijos").click(function(){
     $(".gastosFijos").fadeOut(500, function(){
