@@ -53,11 +53,20 @@ let ahorro = new ahorrar();
 
 
 
-// $("#bt_comenzar").click(function(){
-//     $(".inicio").fadeOut(500, function(){
-//         $(".ingresos").fadeIn(500);
-//     });
-// });
+$.ajax({
+    url: "https://www.dolarsi.com/api/api.php?type=valoresprincipales",
+    dataType: "json",
+    success: function(valor, estado){
+        let dolarCompra = valor[0].casa["compra"];
+        console.log(dolarCompra);
+        $(".dolarCompra").html(dolarCompra);
+
+
+        let dolarBlueCompra = valor[1].casa["compra"];
+        console.log(dolarBlueCompra);
+        $(".dolarBlueCompra").html(dolarBlueCompra);
+    }
+});
 
 $("#bt_ingresos").click(function(){
     $(".ingresos").fadeOut(500, function(){
