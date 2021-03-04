@@ -189,7 +189,7 @@ input:hover{
 .gastosExtras .row{
   margin-top: 200px;
 }
-.gastosFijos, .gastosFlexibles, .gastosExtras{
+.gastosFijos, .gastosFlexibles, .gastosExtras, .calculo{
   margin: 100px 0;
   display: none;
 }
@@ -208,4 +208,14 @@ input:hover{
   background-color: #297FDC !important;
   color: rgb(255, 255, 255) !important;
   border-color: #297FDC !important;
+}
+.calculo{
+  margin-top: 200px;
+}
+.calculoAhorro, .calculoTotal{
+  margin: 25px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.75);
 }

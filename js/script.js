@@ -154,116 +154,120 @@ $("#bt_flexiblesVolver").click(function(){
     });
 });
 $("#bt_gastosExtras").click(function(){
-    let nombresExtras = [
-        "Tv/Telefono",
-        "Indumentaria",
-        "Gim/Deportes",
-        "Peluqueria",
-        "Restaurants",
-        "Cine/Teatro",
-        "Regalos",
-        "Delivery",
-        "Caridad",
-        "Otros"
-    ];
-    let preguntasExtras = [
-        parseInt(document.getElementById("telefono").value),
-        parseInt(document.getElementById("indumentaria").value),
-        parseInt(document.getElementById("gim").value),
-        parseInt(document.getElementById("peluqueria").value),
-        parseInt(document.getElementById("restaurantes").value),
-        parseInt(document.getElementById("cine").value),
-        parseInt(document.getElementById("regalos").value),
-        parseInt(document.getElementById("delivery").value),
-        parseInt(document.getElementById("caridad").value),
-        parseInt(document.getElementById("otros").value)
-    ];
-    sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
-    sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
-
-    let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
-    let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
-
-    extras.agregarGasto(parseGastosExtras, parseNombresExtras);
-    console.log(extras.lista);
-    console.log(extras.nombre);
-
-    let totalGastos = fijos.total() + flexibles.total() + extras.total();
-    console.log(totalGastos);
-    let sobra = ingresos - totalGastos;
-    if(sobra <= 0){
-        sobra = 0;
-    }
-    let ahorroDiarioTotal = ahorro.ahorroDiario() - (sobra / 30);
-    let ahorroMensualTotal = ahorro.ahorroMensual() - sobra;
-    let totalFijosFlex = fijos.total() + flexibles.total();
-    let acum_diario = 0;
-    let acum_mensual = 0;
-    let aux = true;
-    /*Si el ahorro diario es mayor a lo que esta disponible para ahorrar por dia (acum) entonces entra al bucle para comenzar a descontar gastos */
-    while(ahorroMensualTotal > acum_mensual){
-
-        /*Utilizando la regla 50/30/20 descuento los gastos segun porcentaje*/
-        
-        /*Si el total de gastos innecesarios o extras es mayor al 30% de los ingresos del usuario ingresa a un bucle para comenzar a reducir los gastos hasta la condicion*/
-        if(extras.total() > (ingresos*0.3) && extras.total() != 0){
-            while(extras.total() > (ingresos*0.3) && extras.total() != 0){
-                for(let i = 10; i >= 0; i--){
-                    extras.lista[i] = extras.lista[i] - i;  //Utilizo variables auxiliares replicas de las originales ingresadas por el usuario para no perder informacion
-                    acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
-                }
-            }
-
-        /*una vez finalizada la condicion anterior, si aun asi la variable acum no llega a cubrir el ahorro diario necesario
-        comienza el descuento de los gastos flexibles en base a la misma regla 50/30/20 ---*/
-        }else if(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
-
-            /*Se ingresa al bucle calculando el total de gastos fijos sumando a los flexibles, pero solo se reducen los gastos flexibles
-            para que de esa manera no se reduzcan los gastos mas importantes que son los fijos (alquileres, luz, agua, gas, estudios etc.) */
-            while(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
-                for(let i = 10; i >= 0; i--){
-                    flexibles.lista[i] = flexibles.lista[i] - i;
-                    acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
-                }
-                totalFijosFlex = fijos.total() + flexibles.total();
-            }
-
-        /*Si aun despues de reducir todos los gastos flexibles y extras no se llega a cubrir el ahorro diario, se vuelven a descontar los gastos extras
-        hasta cubrir el monto. El objetivo es no descontar los gastos fijos */
-        }else{
-            if((totalFijosFlex != 0) && (extras.total() != 0)){
-                while(ahorroMensualTotal > acum_mensual){
-                    if(aux){
-                        for(let i = 10; i >= 0; i--){
-                            extras.lista[i] = extras.lista[i] - i;
-                            acum_mensual = acum_mensual + i;
-                            extras.total();
-                            aux = false;
-                        }
-                    }else{
-                        for(let i = 10; i >= 0; i--){
-                            flexibles.lista[i] = flexibles.lista[i] - i;
-                            acum_mensual = acum_mensual + i;
-                            totalFijosFlex = fijos.total() + flexibles.total();
-                            aux = true;
-                        }
+    $(".gastosExtras").fadeOut(500, function(){
+        $(".calculo").fadeIn(500);
+        let nombresExtras = [
+            "Tv/Telefono",
+            "Indumentaria",
+            "Gim/Deportes",
+            "Peluqueria",
+            "Restaurants",
+            "Cine/Teatro",
+            "Regalos",
+            "Delivery",
+            "Caridad",
+            "Otros"
+        ];
+        let preguntasExtras = [
+            parseInt(document.getElementById("telefono").value),
+            parseInt(document.getElementById("indumentaria").value),
+            parseInt(document.getElementById("gim").value),
+            parseInt(document.getElementById("peluqueria").value),
+            parseInt(document.getElementById("restaurantes").value),
+            parseInt(document.getElementById("cine").value),
+            parseInt(document.getElementById("regalos").value),
+            parseInt(document.getElementById("delivery").value),
+            parseInt(document.getElementById("caridad").value),
+            parseInt(document.getElementById("otros").value)
+        ];
+        sessionStorage.setItem("gastosExtras", JSON.stringify(preguntasExtras));
+        sessionStorage.setItem("nombresGastosExtras", JSON.stringify(nombresExtras));
+    
+        let parseGastosExtras = JSON.parse(sessionStorage.getItem("gastosExtras"));
+        let parseNombresExtras = JSON.parse(sessionStorage.getItem("nombresGastosExtras"));
+    
+        extras.agregarGasto(parseGastosExtras, parseNombresExtras);
+        console.log(extras.lista);
+        console.log(extras.nombre);
+    
+        let totalGastos = fijos.total() + flexibles.total() + extras.total();
+        console.log(totalGastos);
+        let sobra = ingresos - totalGastos;
+        if(sobra <= 0){
+            sobra = 0;
+        }
+        let ahorroDiarioTotal = ahorro.ahorroDiario() - (sobra / 30);
+        let ahorroMensualTotal = ahorro.ahorroMensual() - sobra;
+        let totalFijosFlex = fijos.total() + flexibles.total();
+        let acum_diario = 0;
+        let acum_mensual = 0;
+        let aux = true;
+        /*Si el ahorro diario es mayor a lo que esta disponible para ahorrar por dia (acum) entonces entra al bucle para comenzar a descontar gastos */
+        while(ahorroMensualTotal > acum_mensual){
+    
+            /*Utilizando la regla 50/30/20 descuento los gastos segun porcentaje*/
+            
+            /*Si el total de gastos innecesarios o extras es mayor al 30% de los ingresos del usuario ingresa a un bucle para comenzar a reducir los gastos hasta la condicion*/
+            if(extras.total() > (ingresos*0.3) && extras.total() != 0){
+                while(extras.total() > (ingresos*0.3) && extras.total() != 0){
+                    for(let i = 10; i >= 0; i--){
+                        extras.lista[i] = extras.lista[i] - i;  //Utilizo variables auxiliares replicas de las originales ingresadas por el usuario para no perder informacion
+                        acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
                     }
                 }
+    
+            /*una vez finalizada la condicion anterior, si aun asi la variable acum no llega a cubrir el ahorro diario necesario
+            comienza el descuento de los gastos flexibles en base a la misma regla 50/30/20 ---*/
+            }else if(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
+    
+                /*Se ingresa al bucle calculando el total de gastos fijos sumando a los flexibles, pero solo se reducen los gastos flexibles
+                para que de esa manera no se reduzcan los gastos mas importantes que son los fijos (alquileres, luz, agua, gas, estudios etc.) */
+                while(totalFijosFlex > (ingresos*0.5) && totalFijosFlex != 0){
+                    for(let i = 10; i >= 0; i--){
+                        flexibles.lista[i] = flexibles.lista[i] - i;
+                        acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
+                    }
+                    totalFijosFlex = fijos.total() + flexibles.total();
+                }
+    
+            /*Si aun despues de reducir todos los gastos flexibles y extras no se llega a cubrir el ahorro diario, se vuelven a descontar los gastos extras
+            hasta cubrir el monto. El objetivo es no descontar los gastos fijos */
             }else{
-                console.log("No se pudo llegar a ahorrar");
-                continue;
+                if((totalFijosFlex != 0) && (extras.total() != 0)){
+                    while(ahorroMensualTotal > acum_mensual){
+                        if(aux){
+                            for(let i = 10; i >= 0; i--){
+                                extras.lista[i] = extras.lista[i] - i;
+                                acum_mensual = acum_mensual + i;
+                                extras.total();
+                                aux = false;
+                            }
+                        }else{
+                            for(let i = 10; i >= 0; i--){
+                                flexibles.lista[i] = flexibles.lista[i] - i;
+                                acum_mensual = acum_mensual + i;
+                                totalFijosFlex = fijos.total() + flexibles.total();
+                                aux = true;
+                            }
+                        }
+                    }
+                }else{
+                    console.log("No se pudo llegar a ahorrar");
+                    continue;
+                }
             }
         }
-    }
-    console.log(acum_mensual);
-    for(let i = 0; i < extras.lista.length; i++){
-        extras.diferencia();
-        console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
-    }
-    for(let i = 0; i < flexibles.lista.length; i++){
-        flexibles.diferencia();
-        console.log(`${flexibles.nombre[i]}: $${flexibles.listaAux[i]} - Ahorrar $${flexibles.ahorrar[i]}. = Total $${flexibles.lista[i]}`);
-    }
+        console.log(acum_mensual);
+        for(let i = 0; i < extras.lista.length; i++){
+            extras.diferencia();
+            console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
+            $(".calculoAhorro").append("<h1>hola ${extras.nombre[i]}</h1>");
+        }
+        for(let i = 0; i < flexibles.lista.length; i++){
+            flexibles.diferencia();
+            console.log(`${flexibles.nombre[i]}: $${flexibles.listaAux[i]} - Ahorrar $${flexibles.ahorrar[i]}. = Total $${flexibles.lista[i]}`);
+        }
+    });
 });
 $("#bt_extrasVolver").click(function(){
     $(".gastosExtras").fadeOut(500, function(){
