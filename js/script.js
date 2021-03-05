@@ -199,8 +199,8 @@ $("#bt_gastosExtras").click(function(){
         let ahorroDiarioTotal = ahorro.ahorroDiario() - (sobra / 30);
         let ahorroMensualTotal = ahorro.ahorroMensual() - sobra;
         let totalFijosFlex = fijos.total() + flexibles.total();
-        let acum_diario = 0;
-        let acum_mensual = 0;
+        let acum_diario = (sobra / 30);
+        let acum_mensual = sobra;
         let aux = true;
         /*Si el ahorro diario es mayor a lo que esta disponible para ahorrar por dia (acum) entonces entra al bucle para comenzar a descontar gastos */
         while(ahorroMensualTotal > acum_mensual){
