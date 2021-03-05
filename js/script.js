@@ -262,14 +262,14 @@ $("#bt_gastosExtras").click(function(){
         for(let i = 0; i < extras.lista.length; i++){
             extras.diferencia();
             console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
-            $(".calculoAhorroExtras__resultados").append(`<h3 class="nombreResultado">$${extras.nombre[i]}: $${extras.listaAux[i]} </h3><h3 class="ahorroResultado">- $${extras.ahorrar[i]}</h3><br><br>`);
-            $(".calculoTotalExtras__resultados").append(`<h3 class="nombreResultado">$${extras.nombre[i]}:</h3><h3 class="totalResultado"> $${extras.lista[i]}</h3><br><br>`);
+            $(".calculoAhorroExtras__resultados").append(`<h3 class="nombreResultado">${extras.nombre[i]}: $${extras.listaAux[i]} </h3><h3 class="ahorroResultado">- $${extras.ahorrar[i]}</h3><br><br>`);
+            $(".calculoTotalExtras__resultados").append(`<h3 class="nombreResultado">${extras.nombre[i]}:</h3><h3 class="totalResultado"> $${extras.lista[i]}</h3><br><br>`);
         }
         for(let i = 0; i < flexibles.lista.length; i++){
             flexibles.diferencia();
             console.log(`${flexibles.nombre[i]}: $${flexibles.listaAux[i]} - Ahorrar $${flexibles.ahorrar[i]}. = Total $${flexibles.lista[i]}`);
-            $(".calculoAhorroFlexibles__resultados").append(`<h3 class="nombreResultado">$${flexibles.nombre[i]}: $${flexibles.listaAux[i]} </h3><h3 class="ahorroResultado">- $${flexibles.ahorrar[i]}</h3><br><br>`);
-            $(".calculoTotalFlexibles__resultados").append(`<h3 class="nombreResultado">$${flexibles.nombre[i]}:</h3><h3 class="totalResultado"> $${flexibles.lista[i]}</h3><br><br>`);
+            $(".calculoAhorroFlexibles__resultados").append(`<h3 class="nombreResultado">${flexibles.nombre[i]}: $${flexibles.listaAux[i]} </h3><h3 class="ahorroResultado">- $${flexibles.ahorrar[i]}</h3><br><br>`);
+            $(".calculoTotalFlexibles__resultados").append(`<h3 class="nombreResultado">${flexibles.nombre[i]}:</h3><h3 class="totalResultado"> $${flexibles.lista[i]}</h3><br><br>`);
         }
     });
 });
