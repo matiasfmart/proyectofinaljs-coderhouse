@@ -234,7 +234,7 @@ $("#bt_gastosExtras").click(function(){
             hasta cubrir el monto. El objetivo es no descontar los gastos fijos */
             }else{
                 if((totalFijosFlex != 0) && (extras.total() != 0)){
-                    while(ahorroMensualTotal > acum_mensual){
+                    while((ahorroMensualTotal > acum_mensual) && (extras.total() != 0) && (totalFijosFlex != 0)){
                         if(aux){
                             for(let i = 10; i >= 0; i--){
                                 extras.lista[i] = extras.lista[i] - i;
@@ -258,14 +258,18 @@ $("#bt_gastosExtras").click(function(){
             }
         }
         console.log(acum_mensual);
+        $(".totalGastoTitulo").append(`<h1>$${totalGastos}</h1>`);
         for(let i = 0; i < extras.lista.length; i++){
             extras.diferencia();
             console.log(`${extras.nombre[i]}: $${extras.listaAux[i]} - Ahorrar $${extras.ahorrar[i]}. = Total $${extras.lista[i]}`);
-            $(".calculoAhorro").append("<h1>hola ${extras.nombre[i]}</h1>");
+            $(".calculoAhorroExtras__resultados").append(`<h3 class="nombreResultado">$${extras.nombre[i]}: $${extras.listaAux[i]} </h3><h3 class="ahorroResultado">- $${extras.ahorrar[i]}</h3><br><br>`);
+            $(".calculoTotalExtras__resultados").append(`<h3 class="nombreResultado">$${extras.nombre[i]}:</h3><h3 class="totalResultado"> $${extras.lista[i]}</h3><br><br>`);
         }
         for(let i = 0; i < flexibles.lista.length; i++){
             flexibles.diferencia();
             console.log(`${flexibles.nombre[i]}: $${flexibles.listaAux[i]} - Ahorrar $${flexibles.ahorrar[i]}. = Total $${flexibles.lista[i]}`);
+            $(".calculoAhorroFlexibles__resultados").append(`<h3 class="nombreResultado">$${flexibles.nombre[i]}: $${flexibles.listaAux[i]} </h3><h3 class="ahorroResultado">- $${flexibles.ahorrar[i]}</h3><br><br>`);
+            $(".calculoTotalFlexibles__resultados").append(`<h3 class="nombreResultado">$${flexibles.nombre[i]}:</h3><h3 class="totalResultado"> $${flexibles.lista[i]}</h3><br><br>`);
         }
     });
 });

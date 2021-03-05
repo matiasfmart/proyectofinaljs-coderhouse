@@ -53,7 +53,7 @@ header{
 .dolarNav div{
   margin: 0% 5%;
 }
-h1{
+h1, h2{
   color: rgb(28, 39, 54);
   font-family: 'Rubik', sans-serif;
   margin: 50px;
@@ -210,12 +210,52 @@ input:hover{
   border-color: #297FDC !important;
 }
 .calculo{
-  margin-top: 200px;
+  margin: 200px auto;
+}
+.totalGastoTitulo h1{
+  color: rgb(5, 168, 26);
+  font-size: 35px;
+  display: inline;
+}
+.calculo__extras, .calculo__flexibles{
+  padding: 5%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 .calculoAhorro, .calculoTotal{
-  margin: 25px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
   box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.75);
+}
+.calculo__extras h1, .calculo__flexibles h1{
+  font-size: 40px;
+  font-family: 'Nunito', sans-serif;
+}
+.calculoAhorroExtras__resultados, .calculoAhorroFlexibles__resultados, .calculoTotalExtras__resultados, .calculoTotalFlexibles__resultados{
+  margin: 10% 15%; 
+}
+.calculoAhorroExtras__titulo, .calculoTotalExtras__titulo, .calculoAhorroFlexibles__titulo, .calculoTotalFlexibles__titulo{
+  font-size: 40px;
+  font-family: 'Nunito', sans-serif;
+  color: #297FDC;
+}
+.nombreResultado{
+  display: inline;
+  color: rgb(28, 39, 54);
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+.ahorroResultado{  
+  display: inline;
+  color: rgb(233, 42, 42);
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+.totalResultado{
+  display: inline;
+  color: rgb(5, 168, 26);
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
 }
