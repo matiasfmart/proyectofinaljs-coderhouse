@@ -242,8 +242,8 @@ $("#bt_gastosExtras").click(function(){
     
             /*Si aun despues de reducir todos los gastos flexibles y extras no se llega a cubrir el ahorro diario, se vuelven a descontar los gastos extras
             hasta cubrir el monto. El objetivo es no descontar los gastos fijos */
-            }else if((ahorro.ahorroMensual() > acum_mensual) && (extras.total() > 0) && (totalFijosFlex > 0)){
-                while((ahorro.ahorroMensual() > acum_mensual) && (extras.total() > 0) && (totalFijosFlex > 0)){
+            }else if((acum_mensual < ahorro.ahorroMensual()) && (extras.total() > 0) && (flexibles.total() > 0)){
+                while((extras.total() > 0) && (flexibles.total() > 0)){
                     if(aux){
                         for(let i = extras.lista.length; i >= 0; i--){
                             if (extras.lista[i] > 0) {                                    
@@ -269,6 +269,7 @@ $("#bt_gastosExtras").click(function(){
                     faltante ++;
                 }
                 faltante = faltante - acum_mensual;
+                break;
             }
         }
         console.log(acum_mensual);
