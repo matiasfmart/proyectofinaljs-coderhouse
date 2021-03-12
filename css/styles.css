@@ -209,11 +209,11 @@ input:hover{
   color: rgb(255, 255, 255) !important;
   border-color: #297FDC !important;
 }
-.calculo{
+.calculo h1{
   margin: 200px auto;
 }
 .totalGastoTitulo h1{
-  color: rgb(5, 168, 26);
+  color: #297FDC;
   font-size: 35px;
   display: inline;
 }

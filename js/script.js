@@ -201,9 +201,10 @@ $("#bt_gastosExtras").click(function(){
         let ahorroDiarioTotal = ahorro.ahorroDiario() - (sobra / 30);
         let totalFijosFlex = fijos.total() + flexibles.total();
         let acum_diario = (sobra / 30);
-        let acum_mensual = sobra;
-        let faltante = 0;
-        let aux = true;
+        let acum_mensual = sobra; //asigno el sobrante del sueldo al acumulador para sumar al ahorro
+        let faltante = 0; //declaro una variable para acumular si se necesita dinero faltante al ahorro 
+        let aux = true; // variable auxiliar booleana para intercalar entre gastos flexibles y extras en la tercera condicion else
+
         /*Si el ahorro diario es mayor a lo que esta disponible para ahorrar por dia (acum) entonces entra al bucle para comenzar a descontar gastos */
         while(ahorro.ahorroMensual() > acum_mensual){
     
@@ -213,10 +214,10 @@ $("#bt_gastosExtras").click(function(){
             if(extras.total() > ingresos*0.3){
                 while(extras.total() > ingresos*0.3){
                     for(let i = extras.lista.length; i >= 0; i--){
-                        for(let j = i; j>= 0; j--){
+                        for(let j = i; j >= 0; j--){
                             if (extras.lista[i] > 0) {                            
-                                extras.lista[i] = extras.lista[i] - i;  //Utilizo variables auxiliares replicas de las originales ingresadas por el usuario para no perder informacion
-                                acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
+                                extras.lista[i]--;  //Utilizo variables replicas de las originales ingresadas por el usuario para no perder informacion
+                                acum_mensual++; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
                             }
                         }
                     }
@@ -228,12 +229,12 @@ $("#bt_gastosExtras").click(function(){
     
                 /*Se ingresa al bucle calculando el total de gastos fijos sumando a los flexibles, pero solo se reducen los gastos flexibles
                 para que de esa manera no se reduzcan los gastos mas importantes que son los fijos (alquileres, luz, agua, gas, estudios etc.) */
-                while(totalFijosFlex > ingresos*0.5){
+                while( (totalFijosFlex > ingresos*0.5) && (flexibles.total() > 0) ){
                     for(let i = flexibles.lista.length; i >= 0; i--){
-                        for(j = i; j>= 0; j--){
-                            if (flexibles.lista[i] > 0) {                            
-                                flexibles.lista[i] = flexibles.lista[i] - i;
-                                acum_mensual =+ i; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
+                        for(let j = i; j >= 0; j--){
+                            if (flexibles.lista[i] > 0) {
+                                flexibles.lista[i]--;
+                                acum_mensual++; //utilizo una variable para acumular el dinero juntado en la reduccion de los gastos
                             }
                         }
                     }
@@ -275,7 +276,7 @@ $("#bt_gastosExtras").click(function(){
         console.log(acum_mensual);
         $(".totalGastoTitulo").append(`<h1>$${totalGastos}</h1>`);
         $(".calculo").append(`<h1>Se acumulo $${acum_mensual}</h1>`)
-        if (faltante != 0) {
+        if (faltante > 0) {
             $(".calculo").append(`<h1>Falta $${faltante}</h1>`)
         }
         for(let i = 0; i < extras.lista.length; i++){
