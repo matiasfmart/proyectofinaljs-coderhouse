@@ -210,10 +210,15 @@ input:hover{
   border-color: #297FDC !important;
 }
 .calculo h1{
-  margin: 200px auto;
+  margin: 40px auto;
 }
 .totalGastoTitulo h1{
   color: #297FDC;
+  font-size: 35px;
+  display: inline;
+}
+.objetivoAhorro h1{
+  color: rgb(5, 168, 26);
   font-size: 35px;
   display: inline;
 }

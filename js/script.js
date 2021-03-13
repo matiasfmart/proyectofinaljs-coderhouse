@@ -275,6 +275,7 @@ $("#bt_gastosExtras").click(function(){
         }
         console.log(acum_mensual);
         $(".totalGastoTitulo").append(`<h1>$${totalGastos}</h1>`);
+        $(".objetivoAhorro").append(`<h1>$${ahorro.ahorro} en ${ahorro.tiempo} meses</h1>`);
         $(".calculo").append(`<h1>Se acumulo $${acum_mensual}</h1>`)
         if (faltante > 0) {
             $(".calculo").append(`<h1>Falta $${faltante}</h1>`)
