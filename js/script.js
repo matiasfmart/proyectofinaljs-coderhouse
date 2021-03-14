@@ -274,11 +274,11 @@ $("#bt_gastosExtras").click(function(){
             }
         }
         console.log(acum_mensual);
-        $(".totalGastoTitulo").append(`<h1>$${totalGastos}</h1>`);
-        $(".objetivoAhorro").append(`<h1>$${ahorro.ahorro} en ${ahorro.tiempo} meses</h1>`);
-        $(".calculo").append(`<h1>Se acumulo $${acum_mensual}</h1>`)
+        $(".totalGastoTitulo").append(`<h1>Total de gastos: $${totalGastos}</h1>`);
+        $(".totalGastoTitulo").append(`<h1>Objetivo de ahorro: $${ahorro.ahorro} en ${ahorro.tiempo} meses</h1>`);
+        $(".calculo").append(`<h1 class="ahorroObtenido">Ahorro mensual obtenido: $${acum_mensual}</h1>`)
         if (faltante > 0) {
-            $(".calculo").append(`<h1>Falta $${faltante}</h1>`)
+            $(".calculo").append(`<h1 class="faltante">Falta: $${faltante}</h1>`)
         }
         for(let i = 0; i < extras.lista.length; i++){
             extras.diferencia();

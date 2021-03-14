@@ -209,18 +209,25 @@ input:hover{
   color: rgb(255, 255, 255) !important;
   border-color: #297FDC !important;
 }
-.calculo h1{
-  margin: 40px auto;
+.calculo{
+  margin: 150px auto;
+}
+.calculo h4{
+  color: rgb(28, 39, 54);
+  font-size: 35px;
+  font-family: 'Rubik', sans-serif;
 }
 .totalGastoTitulo h1{
-  color: #297FDC;
+  color: rgb(28, 39, 54);
   font-size: 35px;
-  display: inline;
 }
-.objetivoAhorro h1{
+.ahorroObtenido{
   color: rgb(5, 168, 26);
   font-size: 35px;
-  display: inline;
+}
+.faltante{
+  color: rgb(233, 42, 42);
+  font-size: 35px;
 }
 .calculo__extras, .calculo__flexibles{
   padding: 5%;
