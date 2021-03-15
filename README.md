@@ -18,8 +18,8 @@ El algoritmo de Piggy, ordena tus gastos en base a la regla de ahorro 50 30 20, 
 ## Autor ✒️
 
 * **Matias Federico Martinez** - [matiasfmart](https://github.com/matiasfmart) 
-* **Website** - (https://matiasfmart.github.io/miPerfilWeb) 
-* **Linkedin** - (https://www.linkedin.com/in/matiasfmart) 
+* [Website](https://matiasfmart.github.io/miPerfilWeb) 
+* **Linkedin** - [Matias Federico Martinez](https://www.linkedin.com/in/matiasfmart) 
 * **Instagram** - [@matiasf_mart](https://www.instagram.com/matiasf_mart) 
 
 
