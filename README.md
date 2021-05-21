@@ -1,4 +1,4 @@
-# piggy
+# Piggy
 
 Calculador de gastos para generar planes de ahorro segun objetivos de ahorro de dinero en un tiempo determinado.
 
@@ -20,7 +20,7 @@ El algoritmo de Piggy, ordena tus gastos en base a la regla de ahorro 50 30 20, 
 * **Matias Federico Martinez** - [matiasfmart](https://github.com/matiasfmart) 
 * **Website** - [matiasfmart.github.io/miPerfilWeb](https://matiasfmart.github.io/miPerfilWeb) 
 * **Linkedin** - [Matias Federico Martinez](https://www.linkedin.com/in/matiasfmart) 
-* **Instagram** - [@matiasf_mart](https://www.instagram.com/matiasf_mart) 
+* **Instagram** - [@matiasfmart](https://www.instagram.com/matiasfmart) 
 
 
 ## Licencia 📄
