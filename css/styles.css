@@ -12,7 +12,7 @@ header{
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 .navbar-brand{
   font-family: 'Nunito', sans-serif;
@@ -20,38 +20,17 @@ header{
   color: #297FDC !important;
   margin: 0%;
   width: 20%;
-  text-align: center;
+  text-align: left;
 }
 .navs{
-  width: 35%;
+  align-items: center;
+  width: 40%;
   font-family: 'Nunito', sans-serif;
   margin: 0% 3%;
 }
 .nav-link{
   color: #297FDC;
   font-size: 22px;
-}
-.dolarNav{
-  width: 25%;
-  color: rgb(0, 21, 46);
-  margin: 0% 5%;
-  display: flex;
-  justify-content: center !important;
-}
-.dolarNav h4{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1em;
-  display: inline-block;
-  font-weight: 600;
-}
-.usd{
-  color: rgb(5, 168, 26);
-}
-.usdblue{
-  color: #134db8;
-}
-.dolarNav div{
-  margin: 0% 5%;
 }
 h1, h2{
   color: rgb(28, 39, 54);
